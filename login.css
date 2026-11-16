@@ -1,0 +1,491 @@
+/* =========================================
+   MERCADO CONFIANÇA — LOGIN
+   Identidade visual: Azul, branco e verde
+   ========================================= */
+
+
+/* 1. CONFIGURAÇÕES GERAIS */
+
+:root {
+    --navy: #071a32;
+    --navy-light: #102b50;
+    --navy-soft: #173b60;
+
+    --green: #00b894;
+    --green-dark: #009b7b;
+    --green-pale: #e4fff5;
+
+    --white: #ffffff;
+    --background: #f4f7fc;
+
+    --text: #172b46;
+    --muted: #718096;
+    --border: #e1e9f3;
+
+    --shadow: 0 15px 45px rgba(7, 26, 50, 0.08);
+}
+
+
+/* 2. RESET E PADRÕES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 30px 30px;
+}
+
+
+/* 3. BOTÃO VOLTAR */
+
+.back-button {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+
+    color: var(--navy);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--green-dark);
+    transform: translateX(-3px);
+}
+
+
+/* 4. CONTAINER PRINCIPAL */
+
+.login-container {
+    width: 100%;
+    max-width: 1050px;
+    min-height: 620px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: var(--white);
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* 5. PAINEL INSTITUCIONAL */
+
+.login-aside {
+    background: var(--navy);
+    color: var(--white);
+
+    padding: 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--green);
+    color: var(--navy);
+
+    border-radius: 8px;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.brand h2 {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    margin-top: 4px;
+
+    color: #a9bacd;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* CONTEÚDO DO PAINEL */
+
+.aside-content {
+    max-width: 400px;
+}
+
+.welcome-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.aside-content h1 {
+    margin-bottom: 20px;
+
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.aside-content h1 span {
+    color: var(--green);
+}
+
+.aside-content > p {
+    color: #c0ccda;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* BENEFÍCIOS */
+
+.login-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #e0e8f0;
+    font-size: 13px;
+}
+
+.benefit-item span {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 184, 148, 0.15);
+    color: var(--green);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* RODAPÉ DO PAINEL */
+
+.aside-footer {
+    color: #8498ae;
+    font-size: 11px;
+}
+
+
+/* 6. ÁREA DO FORMULÁRIO */
+
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 370px;
+}
+
+
+/* CABEÇALHO DO FORMULÁRIO */
+
+.login-heading {
+    margin-bottom: 35px;
+}
+
+.form-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--green-dark);
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.login-heading h2 {
+    margin-bottom: 10px;
+
+    color: var(--navy);
+
+    font-size: 29px;
+}
+
+.login-heading p {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* 7. CAMPOS DO FORMULÁRIO */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    height: 49px;
+
+    padding: 0 15px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    outline: none;
+
+    color: var(--text);
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #a6b1bf;
+}
+
+.form-group input:focus {
+    border-color: var(--green);
+
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.10);
+}
+
+
+/* 8. OPÇÕES DO FORMULÁRIO */
+
+.form-options {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: -8px;
+    margin-bottom: 25px;
+}
+
+.form-options a {
+    color: var(--green-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+
+/* 9. BOTÃO DE LOGIN */
+
+.login-button {
+    width: 100%;
+    height: 50px;
+
+    background: var(--navy);
+    color: var(--white);
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.login-button:hover {
+    background: var(--navy-light);
+
+    transform: translateY(-2px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+/* 10. LINK PARA CADASTRO */
+
+.register-link {
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+.register-link p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.register-link a {
+    color: var(--green-dark);
+
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* 11. RESPONSIVIDADE — TABLETS */
+
+@media (max-width: 850px) {
+
+    .login-container {
+        max-width: 650px;
+        grid-template-columns: 1fr;
+    }
+
+    .login-aside {
+        min-height: 350px;
+        padding: 35px;
+    }
+
+    .aside-content {
+        margin-top: 40px;
+    }
+
+    .aside-content h1 {
+        font-size: 30px;
+    }
+
+    .aside-footer {
+        margin-top: 35px;
+    }
+
+    .login-main {
+        padding: 45px 35px;
+    }
+}
+
+
+/* 12. RESPONSIVIDADE — CELULARES */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 65px 15px 20px;
+    }
+
+    .back-button {
+        top: 23px;
+        left: 20px;
+    }
+
+    .login-container {
+        border-radius: 8px;
+    }
+
+    .login-aside {
+        min-height: auto;
+        padding: 28px 23px;
+    }
+
+    .brand h2 {
+        font-size: 16px;
+    }
+
+    .aside-content {
+        margin-top: 35px;
+    }
+
+    .aside-content h1 {
+        font-size: 27px;
+    }
+
+    .aside-content > p {
+        font-size: 13px;
+    }
+
+    .login-benefits {
+        gap: 13px;
+    }
+
+    .aside-footer {
+        margin-top: 30px;
+    }
+
+    .login-main {
+        padding: 40px 23px;
+    }
+
+    .login-heading h2 {
+        font-size: 25px;
+    }
+
+}

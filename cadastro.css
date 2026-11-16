@@ -1,0 +1,543 @@
+
+/* =========================================
+   MERCADO CONFIANÇA
+   CADASTRO DE CLIENTES
+   ========================================= */
+
+
+/* 1. IDENTIDADE VISUAL */
+
+:root {
+    --navy: #071a32;
+    --navy-light: #102b50;
+    --navy-soft: #173b60;
+
+    --green: #00b894;
+    --green-dark: #009b7b;
+    --green-pale: #e4fff5;
+
+    --white: #ffffff;
+    --background: #f4f7fc;
+
+    --text: #172b46;
+    --muted: #718096;
+    --border: #e1e9f3;
+
+    --shadow: 0 15px 45px rgba(7, 26, 50, 0.08);
+}
+
+
+/* 2. RESET GERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 3. PÁGINA PRINCIPAL */
+
+.cadastro-page {
+    min-height: 100vh;
+    padding: 35px 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 4. BOTÃO VOLTAR */
+
+.voltar-button {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.voltar-button span {
+    font-size: 20px;
+}
+
+.voltar-button:hover {
+    color: var(--green-dark);
+    transform: translateX(-3px);
+}
+
+
+/* 5. ESTRUTURA EM DUAS COLUNAS */
+
+.cadastro-layout {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 680px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* 6. PAINEL AZUL */
+
+.cadastro-aside {
+    background: var(--navy);
+    color: var(--white);
+
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe decorativo */
+
+.cadastro-aside::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(69, 245, 189, 0.12);
+    border-radius: 50%;
+
+    right: -130px;
+    bottom: -100px;
+}
+
+
+/* 7. LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--white);
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--green);
+    color: var(--navy);
+
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.logo-text strong {
+    color: var(--green-light, #45f5bd);
+    font-size: 15px;
+}
+
+
+/* 8. CONTEÚDO DO PAINEL */
+
+.aside-content {
+    margin: 70px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.aside-tag {
+    display: inline-block;
+
+    color: #45f5bd;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 22px;
+}
+
+.aside-content h1 {
+    max-width: 400px;
+
+    font-size: 37px;
+    line-height: 1.25;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.aside-content h1 span {
+    color: #45f5bd;
+}
+
+.aside-content p {
+    max-width: 370px;
+
+    color: #c3d0df;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* 9. BENEFÍCIOS */
+
+.aside-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    margin-top: 35px;
+}
+
+.aside-benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #e5edf5;
+    font-size: 13px;
+}
+
+.benefit-icon {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 184, 148, 0.17);
+    color: #45f5bd;
+
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+/* 10. RODAPÉ DO PAINEL */
+
+.aside-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    color: #91a6bd;
+    font-size: 11px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* 11. ÁREA DO FORMULÁRIO */
+
+.cadastro-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px;
+}
+
+.cadastro-card {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* 12. CABEÇALHO DO FORMULÁRIO */
+
+.cadastro-heading {
+    margin-bottom: 30px;
+}
+
+.heading-tag {
+    color: var(--green-dark);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.cadastro-heading h2 {
+    color: var(--navy);
+
+    font-size: 30px;
+    margin: 12px 0 8px;
+}
+
+.cadastro-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 13. CAMPOS DO FORMULÁRIO */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: #fbfcfe;
+    color: var(--text);
+
+    font-size: 13px;
+    outline: none;
+
+    transition: 0.25s;
+}
+
+.form-group input::placeholder {
+    color: #a0aec0;
+}
+
+.form-group input:focus {
+    background: var(--white);
+    border-color: var(--green);
+
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.10);
+}
+
+.form-group small {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+
+/* 14. TERMOS E PRIVACIDADE */
+
+.termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.termos input {
+    margin-top: 3px;
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+.termos label {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.termos a {
+    color: var(--green-dark);
+    font-weight: bold;
+}
+
+
+/* 15. BOTÃO DE CADASTRO */
+
+.cadastro-button {
+    width: 100%;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    background: var(--green);
+    color: var(--white);
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.cadastro-button span {
+    font-size: 19px;
+}
+
+.cadastro-button:hover {
+    background: var(--green-dark);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.2);
+}
+
+
+/* 16. LINK DE LOGIN */
+
+.login-link {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.login-link a {
+    color: var(--green-dark);
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* 17. RESPONSIVIDADE PARA TABLETS */
+
+@media (max-width: 900px) {
+
+    .cadastro-page {
+        padding: 25px 4%;
+    }
+
+    .cadastro-layout {
+        grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .cadastro-aside {
+        padding: 30px;
+    }
+
+    .aside-content h1 {
+        font-size: 30px;
+    }
+
+    .cadastro-main {
+        padding: 35px 25px;
+    }
+
+}
+
+
+/* 18. RESPONSIVIDADE PARA CELULARES */
+
+@media (max-width: 650px) {
+
+    .cadastro-page {
+        padding: 20px 15px;
+    }
+
+    .cadastro-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cadastro-aside {
+        min-height: 260px;
+        padding: 25px;
+    }
+
+    .aside-content {
+        margin: 35px 0;
+    }
+
+    .aside-content h1 {
+        font-size: 27px;
+    }
+
+    .aside-content p {
+        font-size: 13px;
+    }
+
+    .aside-benefits {
+        gap: 12px;
+    }
+
+    .aside-footer {
+        margin-top: 20px;
+    }
+
+    .cadastro-main {
+        padding: 35px 22px;
+    }
+
+    .cadastro-heading h2 {
+        font-size: 26px;
+    }
+
+}
+
+
+/* 19. CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+
+    .cadastro-page {
+        padding: 15px 10px;
+    }
+
+    .cadastro-aside {
+        padding: 22px;
+    }
+
+    .cadastro-main {
+        padding: 28px 17px;
+    }
+
+    .aside-content h1 {
+        font-size: 24px;
+    }
+
+}

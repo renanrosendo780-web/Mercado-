@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | Mercado Confiança</title>
+
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <!-- PÁGINA DE CADASTRO -->
+    <main class="cadastro-page">
+
+        <!-- BOTÃO VOLTAR -->
+        <a href="index.html" class="voltar-button">
+            <span>←</span> Voltar ao mercado
+        </a>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="cadastro-layout">
+
+            <!-- PAINEL INSTITUCIONAL -->
+            <aside class="cadastro-aside">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">C</span>
+
+                    <span class="logo-text">
+                        MERCADO
+                        <strong>CONFIANÇA</strong>
+                    </span>
+                </a>
+
+                <div class="aside-content">
+
+                    <span class="aside-tag">
+                        SUA COMPRA, MAIS SIMPLES
+                    </span>
+
+                    <h1>
+                        Tudo o que você precisa,
+                        <span>em um só lugar.</span>
+                    </h1>
+
+                    <p>
+                        Crie sua conta e tenha uma experiência
+                        de compra mais prática, organizada
+                        e conveniente.
+                    </p>
+
+                    <div class="aside-benefits">
+
+                        <div class="aside-benefit">
+                            <span class="benefit-icon">✓</span>
+                            <span>Acompanhe seus pedidos</span>
+                        </div>
+
+                        <div class="aside-benefit">
+                            <span class="benefit-icon">✓</span>
+                            <span>Salve seus endereços</span>
+                        </div>
+
+                        <div class="aside-benefit">
+                            <span class="benefit-icon">✓</span>
+                            <span>Aproveite ofertas especiais</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="aside-footer">
+                    <span>© 2026 Mercado Confiança</span>
+                    <span>Qualidade e confiança todos os dias.</span>
+                </div>
+
+            </aside>
+
+
+            <!-- ÁREA DO FORMULÁRIO -->
+            <section class="cadastro-main">
+
+                <div class="cadastro-card">
+
+                    <!-- CABEÇALHO DO FORMULÁRIO -->
+                    <div class="cadastro-heading">
+
+                        <span class="heading-tag">
+                            ÁREA DO CLIENTE
+                        </span>
+
+                        <h2>Crie sua conta</h2>
+
+                        <p>
+                            Preencha seus dados para começar.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FORMULÁRIO -->
+                    <form id="formCadastro">
+
+                        <!-- NOME -->
+                        <div class="form-group">
+
+                            <label for="nome">
+                                Nome completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Ex.: João da Silva"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- E-MAIL -->
+                        <div class="form-group">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="seuemail@exemplo.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TELEFONE -->
+                        <div class="form-group">
+
+                            <label for="telefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="(61) 99999-9999"
+                                autocomplete="tel"
+                                maxlength="15"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SENHA -->
+                        <div class="form-group">
+
+                            <label for="senha">
+                                Crie uma senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Mínimo de 8 caracteres"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <small>
+                                Utilize pelo menos 8 caracteres.
+                            </small>
+
+                        </div>
+
+
+                        <!-- CONFIRMAR SENHA -->
+                        <div class="form-group">
+
+                            <label for="confirmarSenha">
+                                Confirme sua senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmarSenha"
+                                name="confirmarSenha"
+                                placeholder="Digite a senha novamente"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TERMOS -->
+                        <div class="termos">
+
+                            <input
+                                type="checkbox"
+                                id="termos"
+                                name="termos"
+                                required
+                            >
+
+                            <label for="termos">
+                                Li e concordo com os
+                                <a href="#">termos de uso</a>
+                                e a
+                                <a href="#">política de privacidade</a>.
+                            </label>
+
+                        </div>
+
+
+                        <!-- BOTÃO -->
+                        <button
+                            type="submit"
+                            class="cadastro-button"
+                        >
+                            Criar minha conta
+                            <span>→</span>
+                        </button>
+
+                    </form>
+
+
+                    <!-- LOGIN -->
+                    <div class="login-link">
+
+                        Já possui uma conta?
+
+                        <a href="index.html">
+                            Fazer login
+                        </a>
+
+                    </div>
+
+                    
+                    <div class="login-ADM">
+
+                        Conta ADM simulação
+
+                        <a href="admin.html">
+                            Fazer login conta ADM
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="cadastro.js"></script>
+
+</body>
+</html>

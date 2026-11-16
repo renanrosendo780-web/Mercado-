@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mercado Confiança | Smart Market</title>
+
+    <meta name="description" content="Mercado Confiança: suas compras mais simples, inteligentes e econômicas.">
+    <meta name="theme-color" content="#071a32">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         CABEÇALHO
+    ========================================== -->
+
+    <header class="market-header" id="topo">
+
+        <div class="header-container">
+
+            <a href="#topo" class="logo">
+                <span class="logo-icon">C</span>
+
+                <span class="logo-text">
+                    MERCADO
+                    <strong>CONFIANÇA</strong>
+                    <small>SMART MARKET</small>
+                </span>
+            </a>
+
+            <div class="header-actions">
+
+                <button type="button" class="menu-button" id="openMarketMenu"
+                    aria-label="Abrir menu" aria-controls="marketMenuPanel">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <form class="search-bar" id="searchForm" role="search">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="O que você está procurando?"
+                        aria-label="Pesquisar produtos"
+                    >
+
+                    <button type="submit" aria-label="Pesquisar">
+                        🔎
+                    </button>
+
+                </form>
+
+                <button type="button" class="cart-button" id="openCart">
+                    🛒
+                    <span>Minha sacola</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         NAVEGAÇÃO PRINCIPAL
+    ========================================== -->
+
+    <nav class="main-navigation sticky-navigation">
+
+        <div class="navigation-container">
+
+            <a href="#topo">Início</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#mais-vendidos">Mais vendidos</a>
+          <a href="#compra-inteligente">Compra inteligente</a>
+                    Compra inteligente
+               <a href="#minha-dispensa">Minha dispensa</a>
+            <a href="#sobre">Sobre nós</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         MENU LATERAL
+    ========================================== -->
+
+    <div class="market-menu-overlay" id="marketMenuOverlay"></div>
+
+    <aside class="market-menu-panel" id="marketMenuPanel">
+
+        <div class="market-menu-header">
+
+            <a href="#topo" class="logo">
+                <span class="logo-icon">C</span>
+
+                <span class="logo-text">
+                    MERCADO
+                    <strong>CONFIANÇA</strong>
+                    <small>SMART MARKET</small>
+                </span>
+            </a>
+
+            <button type="button" id="closeMarketMenu" aria-label="Fechar menu">
+                ✕
+            </button>
+
+        </div>
+
+        <div class="market-menu-profile">
+
+            <div class="profile-icon">👤</div>
+
+            <div>
+                <strong>Olá, cliente!</strong>
+                <p>Bem-vindo ao Mercado Confiança.</p>
+            </div>
+
+        </div>
+
+        <div class="market-menu-links">
+
+            <a href="#topo" class="market-menu-item">
+                🏠
+                <span>Início</span>
+            </a>
+
+            <a href="#categorias" class="market-menu-item">
+                📦
+                <span>Categorias</span>
+            </a>
+
+            <a href="#ofertas" class="market-menu-item">
+                🏷️
+                <span>Ofertas especiais</span>
+            </a>
+
+            <button type="button" class="market-menu-item" id="menuOpenCart">
+                🛒
+                <span>Minha sacola</span>
+            </button>
+
+            <a href="dispensa.html" class="market-menu-item">
+                🧺
+                <span>Minha despensa</span>
+            </a>
+
+            <a href="iamercado.html" class="market-menu-item">
+                ✨
+                <span>Compra inteligente</span>
+            </a>
+
+            <button type="button" class="market-menu-item" id="menuPurchaseHistory">
+                📋
+                <span>Histórico de compras</span>
+            </button>
+
+            <button type="button" class="market-menu-item" id="menuPrePurchases">
+                ⭐
+                <span>Listas salvas</span>
+            </button>
+
+            <a href="cadastro.html" class="market-menu-item">
+                👤
+                <span>Minha conta</span>
+            </a>
+
+        </div>
+
+        <div class="market-menu-footer">
+
+            <p>Mercado Confiança</p>
+            <span>Suas compras mais inteligentes.</span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             BANNER PRINCIPAL
+        ====================================== -->
+
+        <section class="hero-section">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    SEU MERCADO, SUA CONFIANÇA
+                </span>
+
+                <h1>
+                    Comprar bem ficou
+                    <span>mais inteligente.</span>
+                </h1>
+                <p>
+                    Encontre produtos, aproveite ofertas e organize
+                    suas compras de maneira simples, prática e econômica.
+                </p>
+<br>
+                <div class="hero-actions">
+
+                    <a href="#ofertas" class="primary-button">
+                        Ver ofertas
+                    </a>
+
+                    <a href="#compra-inteligente" class="secondary-button">
+                        Conhecer soluções
+                    </a>
+
+                </div>
+
+                <div class="hero-benefits">
+
+                    <span>✓ Economia</span>
+                    <span>✓ Praticidade</span>
+                    <span>✓ Compra inteligente</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CATEGORIAS
+        ====================================== -->
+
+        <section class="categories-section section-container" id="categorias">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">ENCONTRE RAPIDAMENTE</span>
+                    <h2>Explore nossas categorias</h2>
+
+                    <p>
+                        Tudo o que você precisa, organizado em um só lugar.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="categories-grid compact-categories">
+
+                <button type="button" class="category-card" data-category="Hortifruti">
+                    <span class="category-icon">🥬</span>
+                    <strong>Hortifruti</strong>
+                    <small>Frutas e verduras</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Açougue">
+                    <span class="category-icon">🥩</span>
+                    <strong>Açougue</strong>
+                    <small>Carnes e aves</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Laticínios">
+                    <span class="category-icon">🥛</span>
+                    <strong>Laticínios</strong>
+                    <small>Leites e derivados</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Padaria">
+                    <span class="category-icon">🥖</span>
+                    <strong>Padaria</strong>
+                    <small>Pães e massas</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Mercearia">
+                    <span class="category-icon">🍚</span>
+                    <strong>Mercearia</strong>
+                    <small>Alimentos em geral</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Higiene">
+                    <span class="category-icon">🧴</span>
+                    <strong>Higiene</strong>
+                    <small>Cuidados pessoais</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Limpeza">
+                    <span class="category-icon">🧹</span>
+                    <strong>Limpeza</strong>
+                    <small>Cuidados com a casa</small>
+                </button>
+
+                <button type="button" class="category-card" data-category="Bebidas">
+                    <span class="category-icon">🥤</span>
+                    <strong>Bebidas</strong>
+                    <small>Sucos e refrigerantes</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CATÁLOGO E FILTROS
+        ====================================== -->
+
+        <section class="product-catalog section-container" id="produtos">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">CATÁLOGO DIGITAL</span>
+                    <h2>Encontre seus produtos</h2>
+
+                    <p>
+                        Pesquise, filtre e organize os produtos
+                        de acordo com suas necessidades.
+                    </p>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                id="toggleCatalogFilters"
+                class="filter-toggle-button"
+                aria-expanded="false"
+                aria-controls="catalogFilters"
+            >
+                ⚙️ Filtrar produtos
+            </button>
+
+            <div class="catalog-filters" id="catalogFilters" hidden>
+
+                <div class="filter-search">
+
+                    <label for="catalogSearch">
+                        Pesquisar produto
+                    </label>
+
+                    <input
+                        type="search"
+                        id="catalogSearch"
+                        placeholder="Digite o nome do produto..."
+                    >
+
+                </div>
+
+                <div class="filter-category">
+
+                    <label for="categoryFilter">
+                        Categoria
+                    </label>
+
+                    <select id="categoryFilter">
+
+                        <option value="">Todas as categorias</option>
+                        <option value="Hortifruti">Hortifruti</option>
+                        <option value="Açougue">Açougue</option>
+                        <option value="Laticínios">Laticínios</option>
+                        <option value="Padaria">Padaria</option>
+                        <option value="Mercearia">Mercearia</option>
+                        <option value="Higiene">Higiene</option>
+                        <option value="Limpeza">Limpeza</option>
+                        <option value="Bebidas">Bebidas</option>
+
+                    </select>
+
+                </div>
+
+                <div class="filter-letter">
+
+                    <label for="letterFilter">
+                        Letra inicial
+                    </label>
+
+                    <select id="letterFilter">
+
+                        <option value="">Todas as letras</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                        <option value="K">K</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                        <option value="N">N</option>
+                        <option value="O">O</option>
+                        <option value="P">P</option>
+                        <option value="Q">Q</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                        <option value="T">T</option>
+                        <option value="U">U</option>
+                        <option value="V">V</option>
+                        <option value="W">W</option>
+                        <option value="X">X</option>
+                        <option value="Y">Y</option>
+                        <option value="Z">Z</option>
+
+                    </select>
+
+                </div>
+
+                <button type="button" id="clearFilters" class="clear-filters">
+                    Limpar filtros
+                </button>
+
+            </div>
+
+            <div class="catalog-toolbar">
+
+                <p id="filterResults" aria-live="polite">
+                    Exibindo todos os produtos
+                </p>
+
+                <div class="grid-controls">
+
+                    <span>Visualização:</span>
+
+                    <button type="button" class="grid-option" data-columns="2">
+                        2x
+                    </button>
+
+                    <button type="button" class="grid-option active" data-columns="4">
+                        4x
+                    </button>
+
+                    <button type="button" class="grid-option" data-columns="5">
+                        5x
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             OFERTAS ESPECIAIS
+             20 PRODUTOS
+        ====================================== -->
+
+        <section class="offers section-container product-section" id="ofertas">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">ECONOMIZE MAIS</span>
+                    <h2>Ofertas especiais</h2>
+
+                    <p>
+                        Produtos selecionados com preços especiais.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="products-grid" id="offersGrid">
+
+
+                <!-- PRODUTO 01 -->
+
+                <article class="product-card"
+                    data-name="Arroz tipo 1 5kg"
+                    data-category="Mercearia"
+                    data-price="25.40"
+                    data-description="Arroz tipo 1, pacote de 5kg. Uma opção para as refeições do dia a dia."
+                    data-image="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500">
+
+                    <span class="discount-tag">-15%</span>
+
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500" alt="Arroz tipo 1">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Arroz tipo 1 - 5kg</h3>
+                        <p class="old-price">R$ 29,90</p>
+                        <p class="product-price">R$ 25,40</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 02 -->
+
+                <article class="product-card"
+                    data-name="Batata inglesa 1kg"
+                    data-category="Hortifruti"
+                    data-price="6.20"
+                    data-description="Batata inglesa fresca, ideal para diferentes preparações."
+                    data-image="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500" alt="Batatas">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Batata inglesa - 1kg</h3>
+                        <p class="old-price">R$ 6,90</p>
+                        <p class="product-price">R$ 6,20</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 03 -->
+
+                <article class="product-card"
+                    data-name="Leite integral 1L"
+                    data-category="Laticínios"
+                    data-price="5.20"
+                    data-description="Leite integral de 1 litro, ideal para o consumo diário."
+                    data-image="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500">
+
+                    <span class="discount-tag">-12%</span>
+
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500" alt="Leite integral">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Leite integral - 1L</h3>
+                        <p class="old-price">R$ 5,90</p>
+                        <p class="product-price">R$ 5,20</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 04 -->
+
+                <article class="product-card"
+                    data-name="Frango inteiro 1kg"
+                    data-category="Açougue"
+                    data-price="15.50"
+                    data-description="Frango inteiro, vendido por quilo."
+                    data-image="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500" alt="Frango">
+
+                    <div class="product-info">
+                        <span class="product-category">Açougue</span>
+                        <h3>Frango inteiro - 1kg</h3>
+                        <p class="old-price">R$ 16,90</p>
+                        <p class="product-price">R$ 15,50</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 05 -->
+
+                <article class="product-card"
+                    data-name="Banana prata 1kg"
+                    data-category="Hortifruti"
+                    data-price="5.99"
+                    data-description="Banana prata selecionada, vendida por quilo."
+                    data-image="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500" alt="Bananas">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Banana prata - 1kg</h3>
+                        <p class="old-price">R$ 6,70</p>
+                        <p class="product-price">R$ 5,99</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 06 -->
+
+                <article class="product-card"
+                    data-name="Macarrão espaguete 500g"
+                    data-category="Mercearia"
+                    data-price="3.99"
+                    data-description="Macarrão tipo espaguete, pacote de 500g."
+                    data-image="https://images.unsplash.com/photo-1551462147-37885acc36f1?w=500">
+
+                    <span class="discount-tag">-11%</span>
+
+                    <img src="https://images.unsplash.com/photo-1551462147-37885acc36f1?w=500" alt="Macarrão">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Macarrão espaguete - 500g</h3>
+                        <p class="old-price">R$ 4,50</p>
+                        <p class="product-price">R$ 3,99</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 07 -->
+
+                <article class="product-card"
+                    data-name="Óleo de soja 900ml"
+                    data-category="Mercearia"
+                    data-price="6.49"
+                    data-description="Óleo de soja, embalagem de 900ml."
+                    data-image="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500">
+
+                    <span class="discount-tag">-13%</span>
+
+                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500" alt="Óleo de cozinha">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Óleo de soja - 900ml</h3>
+                        <p class="old-price">R$ 7,49</p>
+                        <p class="product-price">R$ 6,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 08 -->
+
+                <article class="product-card"
+                    data-name="Açúcar refinado 1kg"
+                    data-category="Mercearia"
+                    data-price="4.29"
+                    data-description="Açúcar refinado, pacote de 1kg."
+                    data-image="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500">
+
+                    <span class="discount-tag">-9%</span>
+
+                    <img src="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500" alt="Açúcar">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Açúcar refinado - 1kg</h3>
+                        <p class="old-price">R$ 4,70</p>
+                        <p class="product-price">R$ 4,29</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 09 -->
+
+                <article class="product-card"
+                    data-name="Café tradicional 500g"
+                    data-category="Mercearia"
+                    data-price="17.90"
+                    data-description="Café tradicional torrado e moído, pacote de 500g."
+                    data-image="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=500">
+
+                    <span class="discount-tag">-12%</span>
+
+                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=500" alt="Café">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Café tradicional - 500g</h3>
+                        <p class="old-price">R$ 20,40</p>
+                        <p class="product-price">R$ 17,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 10 -->
+
+                <article class="product-card"
+                    data-name="Pão de forma tradicional"
+                    data-category="Padaria"
+                    data-price="7.49"
+                    data-description="Pão de forma tradicional para o café da manhã e lanches."
+                    data-image="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500" alt="Pão">
+
+                    <div class="product-info">
+                        <span class="product-category">Padaria</span>
+                        <h3>Pão de forma tradicional</h3>
+                        <p class="old-price">R$ 8,30</p>
+                        <p class="product-price">R$ 7,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 11 -->
+
+                <article class="product-card"
+                    data-name="Queijo muçarela 300g"
+                    data-category="Laticínios"
+                    data-price="12.90"
+                    data-description="Queijo muçarela fatiado, embalagem de 300g."
+                    data-image="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500" alt="Queijo">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Queijo muçarela - 300g</h3>
+                        <p class="old-price">R$ 14,30</p>
+                        <p class="product-price">R$ 12,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 12 -->
+
+                <article class="product-card"
+                    data-name="Tomate 1kg"
+                    data-category="Hortifruti"
+                    data-price="5.49"
+                    data-description="Tomates frescos, vendidos por quilo."
+                    data-image="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=500">
+
+                    <span class="discount-tag">-15%</span>
+
+                    <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=500" alt="Tomates">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Tomate - 1kg</h3>
+                        <p class="old-price">R$ 6,49</p>
+                        <p class="product-price">R$ 5,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 13 -->
+
+                <article class="product-card"
+                    data-name="Detergente neutro 500ml"
+                    data-category="Limpeza"
+                    data-price="2.19"
+                    data-description="Detergente neutro para limpeza de louças."
+                    data-image="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500">
+
+                    <span class="discount-tag">-12%</span>
+
+                    <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500" alt="Detergente">
+
+                    <div class="product-info">
+                        <span class="product-category">Limpeza</span>
+                        <h3>Detergente neutro - 500ml</h3>
+                        <p class="old-price">R$ 2,49</p>
+                        <p class="product-price">R$ 2,19</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 14 -->
+
+                <article class="product-card"
+                    data-name="Sabonete em barra"
+                    data-category="Higiene"
+                    data-price="2.99"
+                    data-description="Sabonete em barra para higiene diária."
+                    data-image="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=500" alt="Sabonete">
+
+                    <div class="product-info">
+                        <span class="product-category">Higiene</span>
+                        <h3>Sabonete em barra</h3>
+                        <p class="old-price">R$ 3,30</p>
+                        <p class="product-price">R$ 2,99</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 15 -->
+
+                <article class="product-card"
+                    data-name="Suco de laranja 1L"
+                    data-category="Bebidas"
+                    data-price="7.90"
+                    data-description="Suco de laranja, embalagem de 1 litro."
+                    data-image="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500">
+
+                    <span class="discount-tag">-11%</span>
+
+                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500" alt="Suco de laranja">
+
+                    <div class="product-info">
+                        <span class="product-category">Bebidas</span>
+                        <h3>Suco de laranja - 1L</h3>
+                        <p class="old-price">R$ 8,90</p>
+                        <p class="product-price">R$ 7,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 16 -->
+
+                <article class="product-card"
+                    data-name="Refrigerante cola 2L"
+                    data-category="Bebidas"
+                    data-price="8.49"
+                    data-description="Refrigerante sabor cola, garrafa de 2 litros."
+                    data-image="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=500" alt="Refrigerante">
+
+                    <div class="product-info">
+                        <span class="product-category">Bebidas</span>
+                        <h3>Refrigerante cola - 2L</h3>
+                        <p class="old-price">R$ 9,20</p>
+                        <p class="product-price">R$ 8,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 17 -->
+
+                <article class="product-card"
+                    data-name="Ovos brancos dúzia"
+                    data-category="Mercearia"
+                    data-price="9.90"
+                    data-description="Dúzia de ovos brancos selecionados."
+                    data-image="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=500">
+
+                    <span class="discount-tag">-9%</span>
+
+                    <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=500" alt="Ovos">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Ovos brancos - dúzia</h3>
+                        <p class="old-price">R$ 10,90</p>
+                        <p class="product-price">R$ 9,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 18 -->
+
+                <article class="product-card"
+                    data-name="Maçã vermelha 1kg"
+                    data-category="Hortifruti"
+                    data-price="8.90"
+                    data-description="Maçãs vermelhas frescas, vendidas por quilo."
+                    data-image="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500" alt="Maçãs">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Maçã vermelha - 1kg</h3>
+                        <p class="old-price">R$ 9,90</p>
+                        <p class="product-price">R$ 8,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 19 -->
+
+                <article class="product-card"
+                    data-name="Água sanitária 1L"
+                    data-category="Limpeza"
+                    data-price="3.49"
+                    data-description="Água sanitária para limpeza doméstica, embalagem de 1 litro."
+                    data-image="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500" alt="Produto de limpeza">
+
+                    <div class="product-info">
+                        <span class="product-category">Limpeza</span>
+                        <h3>Água sanitária - 1L</h3>
+                        <p class="old-price">R$ 3,90</p>
+                        <p class="product-price">R$ 3,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 20 -->
+
+                <article class="product-card"
+                    data-name="Iogurte natural 170g"
+                    data-category="Laticínios"
+                    data-price="3.79"
+                    data-description="Iogurte natural, embalagem individual de 170g."
+                    data-image="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500" alt="Iogurte">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Iogurte natural - 170g</h3>
+                        <p class="old-price">R$ 4,20</p>
+                        <p class="product-price">R$ 3,79</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MAIS VENDIDOS
+             20 PRODUTOS
+        ====================================== -->
+
+        <section class="best-sellers section-container product-section" id="mais-vendidos">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">OS FAVORITOS DOS CLIENTES</span>
+                    <h2>Mais vendidos</h2>
+
+                    <p>
+                        Produtos que fazem parte da rotina de muitas famílias.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="products-grid" id="bestSellersGrid">
+
+
+                <!-- PRODUTO 01 -->
+
+                <article class="product-card"
+                    data-name="Arroz tipo 1 5kg"
+                    data-category="Mercearia"
+                    data-price="27.90"
+                    data-description="Arroz tipo 1, pacote de 5kg. Uma opção para as refeições do dia a dia."
+                    data-image="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500" alt="Arroz tipo 1">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Arroz tipo 1 - 5kg</h3>
+                        <p class="old-price">R$ 30,40</p>
+                        <p class="product-price">R$ 27,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 02 -->
+
+                <article class="product-card"
+                    data-name="Leite integral 1L"
+                    data-category="Laticínios"
+                    data-price="5.49"
+                    data-description="Leite integral de 1 litro, ideal para o consumo diário."
+                    data-image="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500" alt="Leite integral">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Leite integral - 1L</h3>
+                        <p class="old-price">R$ 5,90</p>
+                        <p class="product-price">R$ 5,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 03 -->
+
+                <article class="product-card"
+                    data-name="Feijão carioca 1kg"
+                    data-category="Mercearia"
+                    data-price="8.90"
+                    data-description="Feijão carioca selecionado, pacote de 1kg."
+                    data-image="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?w=500" alt="Feijão">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Feijão carioca - 1kg</h3>
+                        <p class="old-price">R$ 9,90</p>
+                        <p class="product-price">R$ 8,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 04 -->
+
+                <article class="product-card"
+                    data-name="Açúcar refinado 1kg"
+                    data-category="Mercearia"
+                    data-price="4.29"
+                    data-description="Açúcar refinado, pacote de 1kg."
+                    data-image="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500">
+
+                    <span class="discount-tag">-7%</span>
+
+                    <img src="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500" alt="Açúcar">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Açúcar refinado - 1kg</h3>
+                        <p class="old-price">R$ 4,60</p>
+                        <p class="product-price">R$ 4,29</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 05 -->
+
+                <article class="product-card"
+                    data-name="Farinha de trigo 1kg"
+                    data-category="Mercearia"
+                    data-price="5.20"
+                    data-description="Farinha de trigo tradicional, pacote de 1kg."
+                    data-image="https://images.unsplash.com/photo-1627485937980-221c88ac04f9?w=500">
+
+                    <span class="discount-tag">-9%</span>
+
+                    <img src="https://images.unsplash.com/photo-1627485937980-221c88ac04f9?w=500" alt="Farinha de trigo">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Farinha de trigo - 1kg</h3>
+                        <p class="old-price">R$ 5,70</p>
+                        <p class="product-price">R$ 5,20</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 06 -->
+
+                <article class="product-card"
+                    data-name="Manteiga 200g"
+                    data-category="Laticínios"
+                    data-price="9.90"
+                    data-description="Manteiga tradicional, embalagem de 200g."
+                    data-image="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=500" alt="Manteiga">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Manteiga - 200g</h3>
+                        <p class="old-price">R$ 10,80</p>
+                        <p class="product-price">R$ 9,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 07 -->
+
+                <article class="product-card"
+                    data-name="Cenoura 1kg"
+                    data-category="Hortifruti"
+                    data-price="4.90"
+                    data-description="Cenouras frescas, vendidas por quilo."
+                    data-image="https://images.unsplash.com/photo-1445282768818-728615cc910a?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?w=500" alt="Cenouras">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Cenoura - 1kg</h3>
+                        <p class="old-price">R$ 5,50</p>
+                        <p class="product-price">R$ 4,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 08 -->
+
+                <article class="product-card"
+                    data-name="Alface crespa unidade"
+                    data-category="Hortifruti"
+                    data-price="3.50"
+                    data-description="Alface crespa fresca, vendida por unidade."
+                    data-image="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=500" alt="Alface">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Alface crespa - unidade</h3>
+                        <p class="old-price">R$ 3,90</p>
+                        <p class="product-price">R$ 3,50</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 09 -->
+
+                <article class="product-card"
+                    data-name="Carne moída 1kg"
+                    data-category="Açougue"
+                    data-price="29.90"
+                    data-description="Carne bovina moída, vendida por quilo."
+                    data-image="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500" alt="Carne moída">
+
+                    <div class="product-info">
+                        <span class="product-category">Açougue</span>
+                        <h3>Carne moída - 1kg</h3>
+                        <p class="old-price">R$ 32,50</p>
+                        <p class="product-price">R$ 29,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 10 -->
+
+                <article class="product-card"
+                    data-name="Peito de frango 1kg"
+                    data-category="Açougue"
+                    data-price="18.90"
+                    data-description="Peito de frango resfriado, vendido por quilo."
+                    data-image="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500">
+
+                    <span class="discount-tag">-9%</span>
+
+                    <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500" alt="Peito de frango">
+
+                    <div class="product-info">
+                        <span class="product-category">Açougue</span>
+                        <h3>Peito de frango - 1kg</h3>
+                        <p class="old-price">R$ 20,80</p>
+                        <p class="product-price">R$ 18,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 11 -->
+
+                <article class="product-card"
+                    data-name="Presunto fatiado 200g"
+                    data-category="Laticínios"
+                    data-price="7.90"
+                    data-description="Presunto fatiado, embalagem de 200g."
+                    data-image="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500" alt="Presunto">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Presunto fatiado - 200g</h3>
+                        <p class="old-price">R$ 8,80</p>
+                        <p class="product-price">R$ 7,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 12 -->
+
+                <article class="product-card"
+                    data-name="Biscoito recheado 130g"
+                    data-category="Mercearia"
+                    data-price="2.99"
+                    data-description="Biscoito recheado, pacote de 130g."
+                    data-image="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500" alt="Biscoito">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Biscoito recheado - 130g</h3>
+                        <p class="old-price">R$ 3,30</p>
+                        <p class="product-price">R$ 2,99</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 13 -->
+
+                <article class="product-card"
+                    data-name="Sabonete 90g"
+                    data-category="Higiene"
+                    data-price="2.49"
+                    data-description="Sabonete para higiene pessoal, embalagem de 90g."
+                    data-image="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=500" alt="Sabonete">
+
+                    <div class="product-info">
+                        <span class="product-category">Higiene</span>
+                        <h3>Sabonete - 90g</h3>
+                        <p class="old-price">R$ 2,80</p>
+                        <p class="product-price">R$ 2,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 14 -->
+
+                <article class="product-card"
+                    data-name="Creme dental 90g"
+                    data-category="Higiene"
+                    data-price="3.90"
+                    data-description="Creme dental para higiene bucal, embalagem de 90g."
+                    data-image="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500">
+
+                    <span class="discount-tag">-9%</span>
+
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500" alt="Creme dental">
+
+                    <div class="product-info">
+                        <span class="product-category">Higiene</span>
+                        <h3>Creme dental - 90g</h3>
+                        <p class="old-price">R$ 4,30</p>
+                        <p class="product-price">R$ 3,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 15 -->
+
+                <article class="product-card"
+                    data-name="Suco de laranja 1L"
+                    data-category="Bebidas"
+                    data-price="7.90"
+                    data-description="Suco de laranja pronto para beber, embalagem de 1 litro."
+                    data-image="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500">
+
+                    <span class="discount-tag">-11%</span>
+
+                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500" alt="Suco de laranja">
+
+                    <div class="product-info">
+                        <span class="product-category">Bebidas</span>
+                        <h3>Suco de laranja - 1L</h3>
+                        <p class="old-price">R$ 8,90</p>
+                        <p class="product-price">R$ 7,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 16 -->
+
+                <article class="product-card"
+                    data-name="Refrigerante cola 2L"
+                    data-category="Bebidas"
+                    data-price="8.49"
+                    data-description="Refrigerante sabor cola, garrafa de 2 litros."
+                    data-image="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=500">
+
+                    <span class="discount-tag">-8%</span>
+
+                    <img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=500" alt="Refrigerante">
+
+                    <div class="product-info">
+                        <span class="product-category">Bebidas</span>
+                        <h3>Refrigerante cola - 2L</h3>
+                        <p class="old-price">R$ 9,20</p>
+                        <p class="product-price">R$ 8,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 17 -->
+
+                <article class="product-card"
+                    data-name="Ovos brancos dúzia"
+                    data-category="Mercearia"
+                    data-price="9.90"
+                    data-description="Dúzia de ovos brancos selecionados."
+                    data-image="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=500">
+
+                    <span class="discount-tag">-9%</span>
+
+                    <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=500" alt="Ovos">
+
+                    <div class="product-info">
+                        <span class="product-category">Mercearia</span>
+                        <h3>Ovos brancos - dúzia</h3>
+                        <p class="old-price">R$ 10,90</p>
+                        <p class="product-price">R$ 9,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 18 -->
+
+                <article class="product-card"
+                    data-name="Maçã vermelha 1kg"
+                    data-category="Hortifruti"
+                    data-price="8.90"
+                    data-description="Maçãs vermelhas frescas, vendidas por quilo."
+                    data-image="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500" alt="Maçãs">
+
+                    <div class="product-info">
+                        <span class="product-category">Hortifruti</span>
+                        <h3>Maçã vermelha - 1kg</h3>
+                        <p class="old-price">R$ 9,90</p>
+                        <p class="product-price">R$ 8,90</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 19 -->
+
+                <article class="product-card"
+                    data-name="Água sanitária 1L"
+                    data-category="Limpeza"
+                    data-price="3.49"
+                    data-description="Água sanitária para limpeza doméstica, embalagem de 1 litro."
+                    data-image="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500" alt="Água sanitária">
+
+                    <div class="product-info">
+                        <span class="product-category">Limpeza</span>
+                        <h3>Água sanitária - 1L</h3>
+                        <p class="old-price">R$ 3,90</p>
+                        <p class="product-price">R$ 3,49</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 20 -->
+
+                <article class="product-card"
+                    data-name="Iogurte natural 170g"
+                    data-category="Laticínios"
+                    data-price="3.79"
+                    data-description="Iogurte natural, embalagem individual de 170g."
+                    data-image="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500" alt="Iogurte">
+
+                    <div class="product-info">
+                        <span class="product-category">Laticínios</span>
+                        <h3>Iogurte natural - 170g</h3>
+                        <p class="old-price">R$ 4,20</p>
+                        <p class="product-price">R$ 3,79</p>
+
+                        <div class="product-actions">
+                            <button type="button" class="add-cart">Adicionar</button>
+                            <button type="button" class="favorite-button" aria-label="Favoritar produto">♡</button>
+                            <button type="button" class="details-button">Detalhes</button>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             COMPRA INTELIGENTE
+        ====================================== -->
+
+        <section class="smart-shopping" id="compra-inteligente">
+
+            <div class="smart-content">
+
+                <span class="section-tag">
+                    TECNOLOGIA A FAVOR DA SUA ECONOMIA
+                </span>
+
+                <h2>
+                    Conheça sua nova forma de
+                    <span>fazer compras.</span>
+                </h2>
+
+                <p>
+                    Com o Confiança Smart, você informa seu orçamento
+                    e seus objetivos. Nossa proposta é ajudar você
+                    a organizar sua lista e encontrar as melhores
+                    oportunidades de compra.
+                </p>
+
+                <ul>
+                    <li>✓ Monte listas de compras personalizadas.</li>
+                    <li>✓ Organize seus gastos por orçamento.</li>
+                    <li>✓ Descubra alternativas econômicas.</li>
+                    <li>✓ Organize seus produtos por categoria.</li>
+                </ul>
+
+                <a href="iamercado.html" class="primary-button">
+                    Conhecer minha compra inteligente
+                </a>
+
+            </div>
+
+            <div class="smart-visual">
+
+                <div class="smart-card">
+
+                    <span class="smart-icon">✦</span>
+
+                    <h3>Minha compra inteligente</h3>
+
+                    <p>Seu planejamento começa aqui.</p>
+
+                    <div class="budget-example">
+                        <span>Seu orçamento</span>
+                        <strong>R$ 250,00</strong>
+                    </div>
+
+                    <div class="smart-progress">
+                        <span></span>
+                    </div>
+
+                    <p class="smart-description">
+                        Organize suas compras e acompanhe
+                        seus gastos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DESPENSA DIGITAL
+        ====================================== -->
+
+        <section class="pantry-section section-container" id="despensa">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">ORGANIZAÇÃO INTELIGENTE</span>
+                    <h2>Minha despensa digital</h2>
+
+                    <p>
+                        Tenha uma visão mais organizada dos produtos
+                        que fazem parte da sua rotina.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pantry-content">
+
+                <div class="pantry-icon">
+                    🧺
+                </div>
+
+                <div class="pantry-information">
+
+                    <h3>Sua despensa, na palma da mão.</h3>
+
+                    <p>
+                        Organize os produtos que você costuma comprar,
+                        acompanhe suas necessidades e planeje melhor
+                        suas próximas compras.
+                    </p>
+
+                    <a href="cadastro.html" class="primary-button">
+                        Acessar minha despensa
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SOBRE O MERCADO
+        ====================================== -->
+
+        <section class="about-section section-container" id="sobre">
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <span class="section-tag">
+                        CONHEÇA O MERCADO CONFIANÇA
+                    </span>
+
+                    <h2>
+                        Mais que um mercado.
+                        <span>Uma nova experiência de compra.</span>
+                    </h2>
+
+                    <p>
+                        O Mercado Confiança nasceu com a proposta de
+                        aproximar praticidade, economia e tecnologia
+                        em uma experiência de compra mais simples.
+                    </p>
+
+                    <p>
+                        Nosso objetivo é facilitar o dia a dia dos
+                        clientes, oferecendo produtos organizados,
+                        ofertas e ferramentas que ajudam no planejamento
+                        das compras.
+                    </p>
+
+                </div>
+
+                <div class="about-benefits">
+
+                    <div class="about-benefits-heading">
+                        <h3>Por que escolher o Confiança?</h3>
+                    </div>
+
+                    <div class="benefits">
+
+                        <article class="benefit-card">
+                            <span>💰</span>
+                            <h4>Economia</h4>
+                            <p>Ofertas e oportunidades para suas compras.</p>
+                        </article>
+
+                        <article class="benefit-card">
+                            <span>⚡</span>
+                            <h4>Praticidade</h4>
+                            <p>Encontre o que precisa de maneira simples.</p>
+                        </article>
+
+                        <article class="benefit-card">
+                            <span>🤖</span>
+                            <h4>Tecnologia</h4>
+                            <p>Recursos inteligentes para organizar sua rotina.</p>
+                        </article>
+
+                        <article class="benefit-card">
+                            <span>🤝</span>
+                            <h4>Confiança</h4>
+                            <p>Uma experiência pensada para nossos clientes.</p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         RODAPÉ
+    ========================================== -->
+
+    <footer class="market-footer" id="contato">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="#topo" class="logo">
+                    <span class="logo-icon">C</span>
+
+                    <span class="logo-text">
+                        MERCADO
+                        <strong>CONFIANÇA</strong>
+                        <small>SMART MARKET</small>
+                    </span>
+                </a>
+
+                <p>
+                    Suas compras mais simples,
+                    inteligentes e econômicas.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Navegação</h3>
+
+                <a href="#topo">Início</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#mais-vendidos">Mais vendidos</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Experiência</h3>
+
+                <a href="#compra-inteligente">Compra inteligente</a>
+                <a href="#despensa">Minha despensa</a>
+                <a href="#sobre">Sobre nós</a>
+                <a href="cadastro.html">Minha conta</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Atendimento</h3>
+
+                <a href="mailto:contato@mercadoconfianca.com.br">
+                    Entre em contato
+                </a>
+
+                <span>Brasília - DF</span>
+                <span>Mercado Confiança</span>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Mercado Confiança. Todos os direitos reservados.
+            </p>
+
+            <p>
+                Desenvolvido com tecnologia e confiança.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         PAINEL DE DETALHES DOS PRODUTOS
+    ========================================== -->
+
+    <div class="details-overlay" id="detailsOverlay">
+
+        <div class="product-details-panel" id="productDetailsPanel">
+
+            <div class="details-header">
+
+                <h2>Detalhes do produto</h2>
+
+                <button type="button" id="closeDetails" aria-label="Fechar detalhes">
+                    ✕
+                </button>
+
+            </div>
+
+            <div class="details-content">
+
+                <div class="details-image-container">
+
+                    <img
+                        src=""
+                        alt="Imagem do produto"
+                        id="detailsImage"
+                    >
+
+                </div>
+
+                <span class="product-category" id="detailsCategory"></span>
+
+                <h3 id="detailsName"></h3>
+
+                <p id="detailsDescription"></p>
+
+                <strong class="product-price" id="detailsPrice"></strong>
+
+                <div class="details-quantity">
+
+                    <button type="button" id="decreaseDetailsQuantity">
+                        −
+                    </button>
+
+                    <span id="detailsQuantity">1</span>
+
+                    <button type="button" id="increaseDetailsQuantity">
+                        +
+                    </button>
+
+                </div>
+
+                <div class="details-actions">
+
+                    <button type="button" id="detailsAddCart" class="add-cart-button">
+                        Adicionar à sacola
+                    </button>
+
+                    <button type="button" id="detailsFavorite" class="favorite-button">
+                        ♡
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a32">
+  <meta name="description" content="Painel administrativo do Mercado Confiança.">
+  <title>Administração | Mercado Confiança</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <!-- ACESSO: o botão de demonstração permite visualizar o protótipo. -->
+  <section class="login-screen" id="loginScreen" aria-label="Acesso administrativo">
+    <div class="login-card">
+      <a class="brand brand-login" href="index.html" aria-label="Voltar ao Mercado Confiança">
+        <span class="brand-mark">C</span>
+        <span class="brand-copy"><strong>MERCADO CONFIANÇA</strong><small>PAINEL ADMINISTRATIVO</small></span>
+      </a>
+      <div class="login-heading">
+        <span class="eyebrow">ÁREA RESTRITA</span>
+        <h1>Bem-vindo de volta.</h1>
+        <p>Acesse a gestão do seu mercado em um só lugar.</p>
+      </div>
+      <form id="loginForm" class="login-form">
+        <label for="loginEmail">E-mail administrativo</label>
+        <input id="loginEmail" type="email" autocomplete="username" placeholder="admin@mercadoconfianca.com.br" required>
+        <label for="loginPassword">Senha</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+        <button class="button button-primary button-full" type="submit">Entrar no painel <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="login-divider"><span>ou</span></div>
+      <button type="button" class="button button-outline button-full" id="demoAccess">Acessar demonstração</button>
+      <p class="security-note"><strong>Importante:</strong> o login real precisa ser conectado a um servidor. Esta versão é um protótipo local e não protege dados por senha.</p>
+      <a class="back-link" href="index.html">← Voltar à loja</a>
+    </div>
+  </section>
+
+  <div class="app-shell is-hidden" id="adminApp">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">C</span>
+          <span class="brand-copy"><strong>MERCADO CONFIANÇA</strong><small>SMART MARKET</small></span>
+        </a>
+        <button class="icon-button sidebar-close" id="closeSidebar" type="button" aria-label="Fechar menu">×</button>
+      </div>
+
+      <div class="store-label"><span class="store-dot"></span><span><strong>Unidade principal</strong><small>Brasília · DF</small></span></div>
+
+      <nav class="side-nav" aria-label="Navegação administrativa">
+        <p class="nav-caption">GESTÃO</p>
+        <button class="nav-link is-active" type="button" data-view="overview"><span class="nav-icon">▦</span>Visão geral</button>
+        <button class="nav-link" type="button" data-view="products"><span class="nav-icon">▤</span>Produtos</button>
+        <button class="nav-link" type="button" data-view="inventory"><span class="nav-icon">▣</span>Estoque <span class="nav-count" id="stockNavCount">0</span></button>
+        <button class="nav-link" type="button" data-view="promotions"><span class="nav-icon">％</span>Promoções</button>
+        <button class="nav-link" type="button" data-view="suppliers"><span class="nav-icon">♧</span>Fornecedores</button>
+        <button class="nav-link" type="button" data-view="sales"><span class="nav-icon">▥</span>Vendas</button>
+        <p class="nav-caption nav-caption-spaced">ANÁLISE E CONTROLE</p>
+        <button class="nav-link" type="button" data-view="finance"><span class="nav-icon">R$</span>Financeiro e preços</button>
+        <button class="nav-link" type="button" data-view="reports"><span class="nav-icon">▧</span>Relatórios</button>
+        <button class="nav-link" type="button" data-view="security"><span class="nav-icon">♙</span>Acessos e segurança</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-help"><span class="help-icon">?</span><div><strong>Precisa de ajuda?</strong><small>Consulte o guia do painel</small></div></div>
+        <button class="nav-link logout-link" type="button" id="logoutButton"><span class="nav-icon">↪</span>Sair do painel</button>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button menu-toggle" id="openSidebar" type="button" aria-label="Abrir menu">☰</button>
+          <div><span class="topbar-kicker">MERCADO CONFIANÇA / ADMINISTRAÇÃO</span><h1 id="pageTitle">Visão geral</h1></div>
+        </div>
+        <div class="topbar-actions">
+          <span class="demo-status"><i></i> Ambiente de demonstração</span>
+          <button class="icon-button" id="exportBackup" type="button" title="Exportar backup" aria-label="Exportar backup">⇩</button>
+          <div class="admin-profile"><span class="avatar">AD</span><span><strong>Administrador</strong><small>Perfil de demonstração</small></span></div>
+        </div>
+      </header>
+
+      <div class="demo-banner" id="demoBanner"><strong>Dados demonstrativos.</strong> Cadastros e alterações ficam salvos somente neste navegador. Vendas, clientes e pagamentos reais ainda precisam de integração com o sistema da loja.</div>
+
+      <!-- VISÃO GERAL -->
+      <section class="view is-visible" id="view-overview" data-page="overview">
+        <div class="page-intro"><div><span class="eyebrow">RESUMO DO NEGÓCIO</span><h2>Visão geral do mercado</h2><p>Acompanhe os principais números e identifique onde agir.</p></div><label class="period-control">Período <select id="periodFilter"><option value="30">Últimos 30 dias</option><option value="7">Últimos 7 dias</option><option value="90">Últimos 90 dias</option></select></label></div>
+
+        <div class="kpi-grid">
+          <article class="kpi-card"><div class="kpi-top"><span>Faturamento bruto</span><span class="kpi-icon green">R$</span></div><strong id="kpiRevenue">R$ 48.320,00</strong><small class="kpi-foot"><span class="positive">↑ 8,4%</span> vs. período anterior</small></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Margem de contribuição</span><span class="kpi-icon blue">％</span></div><strong id="kpiContribution">R$ 12.563,20</strong><small class="kpi-foot">Estimativa antes dos custos fixos</small></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Ticket médio</span><span class="kpi-icon violet">▤</span></div><strong id="kpiTicket">R$ 67,48</strong><small class="kpi-foot"><span class="positive">↑ 3,1%</span> vs. período anterior</small></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Valor do estoque</span><span class="kpi-icon amber">▣</span></div><strong id="kpiStockValue">R$ 0,00</strong><small class="kpi-foot">Avaliado pelo custo cadastrado</small></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading"><div><h3>Vendas no período</h3><p>Faturamento diário — valores ilustrativos</p></div><span class="chart-legend"><i></i>Vendas</span></div>
+            <div class="sales-chart" id="salesChart" role="img" aria-label="Gráfico demonstrativo de faturamento por dia"></div>
+            <div class="chart-axis"><span>Início do período</span><span>Hoje</span></div>
+          </article>
+          <article class="panel category-panel">
+            <div class="panel-heading"><div><h3>Vendas por categoria</h3><p>Participação no faturamento</p></div><button class="text-button" type="button" data-go="reports">Ver relatório →</button></div>
+            <div id="categoryChart" class="category-chart"></div>
+          </article>
+        </div>
+
+        <div class="dashboard-grid lower-grid">
+          <article class="panel table-panel">
+            <div class="panel-heading"><div><h3>Produtos que mais vendem</h3><p>Ranking demonstrativo por volume</p></div><button class="text-button" type="button" data-go="products">Ver produtos →</button></div>
+            <div class="table-wrap"><table><thead><tr><th>Produto</th><th>Categoria</th><th>Unidades</th><th>Faturamento</th></tr></thead><tbody id="topProductsBody"></tbody></table></div>
+          </article>
+          <article class="panel alerts-panel">
+            <div class="panel-heading"><div><h3>Atenção necessária</h3><p>Itens que merecem acompanhamento</p></div><span class="alert-total" id="alertTotal">0</span></div>
+            <div id="overviewAlerts" class="alert-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRODUTOS -->
+      <section class="view" id="view-products" data-page="products">
+        <div class="page-intro"><div><span class="eyebrow">CATÁLOGO E PRECIFICAÇÃO</span><h2>Cadastro de produtos</h2><p>Organize informações comerciais, custos, preços, fotos e promoções.</p></div><button class="button button-primary" type="button" id="addProductButton">＋ Novo produto</button></div>
+        <div class="summary-strip"><div><span>Produtos ativos</span><strong id="productsCount">0</strong></div><div><span>Com promoção</span><strong id="promotedCount">0</strong></div><div><span>Margem média estimada</span><strong id="averageMargin">0%</strong></div><div><span>Estoque baixo</span><strong id="lowStockCount">0</strong></div></div>
+        <article class="panel">
+          <div class="toolbar"><div class="search-field"><span>⌕</span><input type="search" id="productSearch" placeholder="Buscar por nome, código ou marca..."></div><select id="productCategoryFilter"><option value="">Todas as categorias</option><option>Hortifruti</option><option>Mercearia</option><option>Bebidas</option><option>Frios e laticínios</option><option>Limpeza</option><option>Padaria</option><option>Higiene</option><option>Açougue</option></select><select id="productStatusFilter"><option value="">Todos os status</option><option value="active">Ativos</option><option value="inactive">Inativos</option><option value="low">Estoque baixo</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>Produto</th><th>Categoria</th><th>Custo real</th><th>Preço varejo</th><th>Margem contrib.</th><th>Estoque</th><th>Status</th><th>Ações</th></tr></thead><tbody id="productsTableBody"></tbody></table></div>
+          <div class="table-bottom"><span id="productsTableCount">0 produtos</span><button type="button" class="text-button" id="exportProducts">Exportar lista CSV ↓</button></div>
+        </article>
+      </section>
+
+      <!-- ESTOQUE -->
+      <section class="view" id="view-inventory" data-page="inventory">
+        <div class="page-intro"><div><span class="eyebrow">CONTROLE OPERACIONAL</span><h2>Estoque e validade</h2><p>Acompanhe níveis de reposição, lotes, vencimentos e perdas.</p></div><button class="button button-primary" type="button" id="inventoryAdjustmentButton">＋ Ajustar estoque</button></div>
+        <div class="kpi-grid compact-kpis"><article class="kpi-card"><span>Itens abaixo do mínimo</span><strong id="inventoryLow">0</strong><small class="negative">Precisam de reposição</small></article><article class="kpi-card"><span>Produtos próximos do vencimento</span><strong id="inventoryExpiry">0</strong><small>Nos próximos 15 dias</small></article><article class="kpi-card"><span>Unidades em estoque</span><strong id="inventoryUnits">0</strong><small>Somatório de quantidades</small></article><article class="kpi-card"><span>Capital no estoque</span><strong id="inventoryCapital">R$ 0,00</strong><small>Quantidade × custo real</small></article></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Posição atual do estoque</h3><p>Confira quantidade, mínimo de segurança e lote cadastrado.</p></div><div class="search-field small-search"><span>⌕</span><input id="inventorySearch" type="search" placeholder="Buscar produto..."></div></div><div class="table-wrap"><table><thead><tr><th>Produto</th><th>Estoque atual</th><th>Estoque mínimo</th><th>Reposição sugerida</th><th>Lote</th><th>Validade</th><th>Situação</th><th></th></tr></thead><tbody id="inventoryTableBody"></tbody></table></div></article>
+        <article class="panel movement-panel"><div class="panel-heading"><div><h3>Movimentações recentes</h3><p>Entradas, saídas, perdas e contagens registradas neste navegador.</p></div></div><div class="table-wrap"><table><thead><tr><th>Data / hora</th><th>Produto</th><th>Movimentação</th><th>Quantidade</th><th>Saldo anterior</th><th>Saldo atual</th><th>Motivo</th></tr></thead><tbody id="inventoryMovementsBody"></tbody></table></div></article>
+        <div class="info-note"><strong>Boa prática:</strong> registre entradas, vendas, devoluções, ajustes e perdas separadamente. Alterar o saldo sem registrar o motivo dificulta a conferência do estoque físico.</div>
+      </section>
+
+      <!-- PROMOÇÕES -->
+      <section class="view" id="view-promotions" data-page="promotions">
+        <div class="page-intro"><div><span class="eyebrow">ESTRATÉGIA COMERCIAL</span><h2>Promoções e ofertas</h2><p>Defina preços especiais sem perder a visibilidade da margem.</p></div><button class="button button-primary" type="button" id="newPromotionButton">＋ Criar promoção</button></div>
+        <div class="summary-strip"><div><span>Promoções cadastradas</span><strong id="promotionCount">0</strong></div><div><span>Promoções ativas</span><strong id="promotionActiveCount">0</strong></div><div><span>Produtos em oferta</span><strong id="promotionProductCount">0</strong></div></div>
+        <div id="promotionCards" class="promotion-grid"></div>
+        <div class="info-note"><strong>Regra de segurança:</strong> antes de ativar uma oferta, confira o custo real, as taxas variáveis e a margem de contribuição. Desconto alto não significa necessariamente promoção rentável.</div>
+      </section>
+
+      <!-- FORNECEDORES -->
+      <section class="view" id="view-suppliers" data-page="suppliers">
+        <div class="page-intro"><div><span class="eyebrow">CADEIA DE ABASTECIMENTO</span><h2>Fornecedores e compras</h2><p>Centralize contatos, prazos, condições e histórico de compra.</p></div><button class="button button-primary" type="button" id="addSupplierButton">＋ Novo fornecedor</button></div>
+        <div class="summary-strip"><div><span>Fornecedores cadastrados</span><strong id="supplierCount">0</strong></div><div><span>Pedidos em aberto</span><strong>3</strong></div><div><span>Compras no mês</span><strong>R$ 18.740,00</strong></div></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Base de fornecedores</h3><p>Dados de exemplo para estruturar o cadastro.</p></div></div><div class="table-wrap"><table><thead><tr><th>Fornecedor</th><th>Categoria</th><th>Contato</th><th>Prazo médio</th><th>Condição</th><th>Status</th></tr></thead><tbody id="suppliersTableBody"></tbody></table></div></article>
+        <article class="panel purchase-panel"><div class="panel-heading"><div><h3>Fluxo de compras sugerido</h3><p>Etapas recomendadas para evitar divergências de estoque.</p></div></div><div class="process-steps"><div><b>01</b><strong>Solicitar cotação</strong><small>Comparar preço, frete e prazo.</small></div><div><b>02</b><strong>Emitir pedido</strong><small>Registrar itens e quantidades.</small></div><div><b>03</b><strong>Conferir recebimento</strong><small>Validar quantidade, lote e validade.</small></div><div><b>04</b><strong>Atualizar custo e estoque</strong><small>Guardar histórico da compra.</small></div></div></article>
+      </section>
+
+      <!-- VENDAS -->
+      <section class="view" id="view-sales" data-page="sales">
+        <div class="page-intro"><div><span class="eyebrow">DESEMPENHO COMERCIAL</span><h2>Vendas e pedidos</h2><p>Resumo demonstrativo de vendas e comportamento do consumidor.</p></div><select id="salesPeriod"><option>Últimos 30 dias</option><option>Últimos 7 dias</option><option>Este mês</option></select></div>
+        <div class="kpi-grid compact-kpis"><article class="kpi-card"><span>Faturamento bruto</span><strong>R$ 48.320,00</strong><small>Exemplo de período</small></article><article class="kpi-card"><span>Pedidos / cupons</span><strong>716</strong><small>Exemplo de período</small></article><article class="kpi-card"><span>Ticket médio</span><strong>R$ 67,48</strong><small>Faturamento ÷ pedidos</small></article><article class="kpi-card"><span>Unidades vendidas</span><strong>3.842</strong><small>Exemplo de período</small></article></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Movimentações recentes</h3><p>Pedidos fictícios para demonstrar a estrutura.</p></div></div><div class="table-wrap"><table><thead><tr><th>Pedido</th><th>Data</th><th>Canal</th><th>Itens</th><th>Pagamento</th><th>Valor</th><th>Status</th></tr></thead><tbody id="salesTableBody"></tbody></table></div></article>
+        <div class="info-note"><strong>Integração pendente:</strong> o checkout atual do site não envia pedidos para um banco central. Para exibir vendas reais aqui, será necessário conectar o checkout/PDV a uma API e registrar cada venda confirmada.</div>
+      </section>
+
+      <!-- FINANCEIRO -->
+      <section class="view" id="view-finance" data-page="finance">
+        <div class="page-intro"><div><span class="eyebrow">RENTABILIDADE DO NEGÓCIO</span><h2>Financeiro e formação de preços</h2><p>Entenda quanto cada venda contribui e quanto o mercado precisa faturar.</p></div></div>
+        <div class="finance-grid">
+          <article class="panel calculator-panel"><div class="panel-heading"><div><h3>Calculadora de preço de venda</h3><p>Simule o preço mínimo a partir do custo e da margem desejada.</p></div><span class="calculator-icon">R$</span></div>
+            <div class="form-grid">
+              <label class="field field-full">Produto<select id="priceProductSelect"></select></label>
+              <label class="field">Custo real unitário (R$)<input type="number" id="priceCost" min="0" step="0.01" value="10"></label>
+              <label class="field">Despesas variáveis (%)<input type="number" id="priceVariable" min="0" max="99" step="0.1" value="8"></label>
+              <label class="field field-full">Margem de contribuição desejada (%)<input type="number" id="targetMargin" min="0" max="90" step="0.5" value="20"></label>
+            </div>
+            <div class="price-result"><span>Preço mínimo sugerido</span><strong id="suggestedPrice">R$ 13,89</strong><small id="priceFormula">Custo real ÷ (1 − despesas variáveis − margem desejada)</small></div>
+          </article>
+          <article class="panel break-even-panel"><div class="panel-heading"><div><h3>Ponto de equilíbrio</h3><p>Faturamento necessário para cobrir custos fixos.</p></div><span class="calculator-icon">◎</span></div>
+            <label class="field">Custos fixos mensais (R$)<input id="fixedCosts" type="number" min="0" step="100" value="15000"></label>
+            <label class="field">Lucro desejado no mês (R$)<input id="desiredProfit" type="number" min="0" step="100" value="5000"></label>
+            <div class="break-even-results"><div><span>Margem de contribuição média estimada</span><strong id="averageContributionRate">0%</strong></div><div><span>Faturamento para não ter prejuízo</span><strong id="breakEvenValue">R$ 0,00</strong></div><div class="highlight-result"><span>Meta de faturamento para o lucro desejado</span><strong id="salesGoalValue">R$ 0,00</strong></div></div>
+            <small class="muted-note">Estimativa gerencial baseada nos custos e produtos cadastrados. Não substitui DRE contábil nem apuração tributária.</small>
+          </article>
+        </div>
+        <article class="panel financial-notes"><div class="panel-heading"><div><h3>Como o cálculo funciona</h3><p>Separar os conceitos evita confundir faturamento com lucro.</p></div></div><div class="formula-grid"><div><strong>Custo real unitário</strong><p>Preço de compra + frete rateado + custos adicionais atribuídos à unidade.</p></div><div><strong>Margem de contribuição</strong><p>Preço de venda − custo do produto − despesas variáveis da venda.</p></div><div><strong>Ponto de equilíbrio</strong><p>Custos fixos mensais ÷ percentual médio de margem de contribuição.</p></div><div><strong>Lucro estimado</strong><p>Margem de contribuição total − custos fixos, antes de ajustes contábeis e impostos não cadastrados.</p></div></div></article>
+      </section>
+
+      <!-- RELATÓRIOS -->
+      <section class="view" id="view-reports" data-page="reports">
+        <div class="page-intro"><div><span class="eyebrow">INTELIGÊNCIA DE NEGÓCIO</span><h2>Relatórios e estatísticas</h2><p>Compare categorias, rentabilidade e eficiência do estoque.</p></div><button class="button button-outline" id="exportReport" type="button">Exportar resumo ↓</button></div>
+        <div class="dashboard-grid"><article class="panel"><div class="panel-heading"><div><h3>Desempenho por categoria</h3><p>Faturamento demonstrativo e participação.</p></div></div><div id="reportCategoryChart" class="category-chart"></div></article><article class="panel"><div class="panel-heading"><div><h3>Indicadores operacionais</h3><p>Indicadores que merecem acompanhamento.</p></div></div><div class="metric-list"><div><span>Giro de estoque</span><strong>Calcular com histórico de CMV</strong></div><div><span>Cobertura em dias</span><strong>Estoque ÷ venda média diária</strong></div><div><span>Ruptura</span><strong>Itens sem saldo ÷ itens ativos</strong></div><div><span>Perdas</span><strong>Valor perdido ÷ valor vendido</strong></div><div><span>Capital parado</span><strong>Estoque sem giro × custo unitário</strong></div></div></article></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Resumo por categoria</h3><p>Exemplo de distribuição do faturamento.</p></div></div><div class="table-wrap"><table><thead><tr><th>Categoria</th><th>Faturamento</th><th>Participação</th><th>Leitura gerencial</th></tr></thead><tbody id="categoryReportBody"></tbody></table></div></article>
+      </section>
+
+      <!-- SEGURANÇA -->
+      <section class="view" id="view-security" data-page="security">
+        <div class="page-intro"><div><span class="eyebrow">GOVERNANÇA E PROTEÇÃO</span><h2>Acessos e segurança</h2><p>Estrutura recomendada para proteger a operação e os dados.</p></div></div>
+        <div class="security-grid"><article class="panel"><span class="security-symbol">♙</span><h3>Perfis de acesso</h3><p>Crie permissões diferentes para administrador, gerente, estoque e caixa. Cada pessoa deve acessar somente o que precisa para sua função.</p><span class="status-tag status-pending">A implementar no servidor</span></article><article class="panel"><span class="security-symbol">◷</span><h3>Histórico de atividades</h3><p>Registre quem alterou preço, estoque, promoção, cadastro ou dados financeiros, com data, hora e valor anterior.</p><span class="status-tag status-pending">A implementar no servidor</span></article><article class="panel"><span class="security-symbol">⇧</span><h3>Backups</h3><p>Faça cópias automáticas do banco de dados e teste a restauração. A exportação local desta demonstração não substitui backup centralizado.</p><button class="button button-outline" type="button" id="securityBackup">Exportar backup local</button></article><article class="panel"><span class="security-symbol">▣</span><h3>LGPD e dados pessoais</h3><p>Guarde apenas os dados necessários, defina finalidade e prazo de retenção e restrinja o acesso às informações dos clientes e funcionários.</p><a class="text-button" href="https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte" target="_blank" rel="noopener">Consultar guia da ANPD ↗</a></article></div>
+        <div class="warning-note"><strong>Não publique este protótipo como ambiente administrativo real.</strong> A tela de demonstração não autentica usuários, e o armazenamento local pode ser visualizado ou alterado pelo próprio navegador. Login, permissões, dados financeiros e dados de clientes precisam de API, banco de dados e validação no servidor.</div>
+      </section>
+
+      <footer class="admin-footer"><span>Mercado Confiança · Painel Administrativo</span><span>Protótipo de interface · 2026</span></footer>
+    </main>
+  </div>
+
+  <!-- MODAL DE PRODUTO -->
+  <div class="modal-backdrop" id="productModal" aria-hidden="true">
+    <section class="modal modal-large" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+      <div class="modal-header"><div><span class="eyebrow">CATÁLOGO</span><h2 id="productModalTitle">Cadastrar produto</h2><p>Preencha os dados para organizar custo, preço e estoque.</p></div><button class="icon-button" type="button" data-close-modal aria-label="Fechar">×</button></div>
+      <form id="productForm">
+        <input type="hidden" id="editProductId">
+        <div class="modal-section"><h3>Identificação do produto</h3><div class="form-grid">
+          <label class="field field-wide">Nome do produto *<input id="productName" required maxlength="90" placeholder="Ex.: Arroz tipo 1 — 5 kg"></label>
+          <label class="field">Categoria *<select id="productCategory" required><option value="">Selecione</option><option>Hortifruti</option><option>Mercearia</option><option>Bebidas</option><option>Frios e laticínios</option><option>Limpeza</option><option>Padaria</option><option>Higiene</option><option>Açougue</option></select></label>
+          <label class="field">Unidade de venda<select id="productUnit"><option value="un">Unidade (un)</option><option value="kg">Quilograma (kg)</option><option value="g">Grama (g)</option><option value="L">Litro (L)</option><option value="ml">Mililitro (ml)</option><option value="pct">Pacote (pct)</option><option value="cx">Caixa (cx)</option></select></label>
+          <label class="field">Código interno / SKU<input id="productSku" maxlength="40" placeholder="MC-0001"></label>
+          <label class="field">Código de barras (EAN/GTIN)<input id="productBarcode" maxlength="20" placeholder="7890000000000"></label>
+          <label class="field">Marca<input id="productBrand" maxlength="60" placeholder="Marca do fabricante"></label>
+          <label class="field">Fornecedor principal<input id="productSupplier" maxlength="80" placeholder="Nome do fornecedor"></label>
+          <label class="field field-full">Descrição comercial<textarea id="productDescription" rows="3" maxlength="400" placeholder="Informações úteis sobre o produto, apresentação, conteúdo e diferenciais."></textarea></label>
+          <div class="field field-full image-upload-field"><label for="productImageFile">Foto do produto</label><div class="image-upload-row"><div class="image-preview" id="imagePreview">IMG</div><div><input type="file" id="productImageFile" accept="image/png,image/jpeg,image/webp"><small>Escolha uma imagem JPG, PNG ou WebP. A prévia será reduzida para caber no armazenamento local.</small><input type="hidden" id="productImageData"></div></div></div>
+        </div></div>
+        <div class="modal-section"><h3>Custos e formação de preço</h3><div class="form-grid">
+          <label class="field">Preço de compra por unidade (R$) *<input id="productPurchaseCost" type="number" min="0" step="0.01" required value="0"></label>
+          <label class="field">Frete rateado por unidade (R$)<input id="productFreight" type="number" min="0" step="0.01" value="0"></label>
+          <label class="field">Outros custos por unidade (R$)<input id="productExtraCost" type="number" min="0" step="0.01" value="0"></label>
+          <label class="field">Despesas variáveis da venda (%)<input id="productVariableCost" type="number" min="0" max="99" step="0.1" value="8"></label>
+          <label class="field">Preço de venda no varejo (R$) *<input id="productSalePrice" type="number" min="0" step="0.01" required value="0"></label>
+          <label class="field">Preço de atacado (R$)<input id="productWholesalePrice" type="number" min="0" step="0.01" value="0"></label>
+          <label class="field">Quantidade mínima para atacado<input id="productWholesaleMin" type="number" min="1" step="1" value="12"></label>
+          <div class="calculated-cost"><span>Custo real estimado</span><strong id="productLandedCost">R$ 0,00</strong><small>Compra + frete rateado + custos adicionais</small></div>
+          <div class="calculated-cost"><span>Margem de contribuição estimada</span><strong id="productContribution">0%</strong><small>Considera despesas variáveis cadastradas</small></div>
+        </div></div>
+        <div class="modal-section"><h3>Promoção de varejo</h3><div class="form-grid">
+          <label class="field">Preço promocional (R$)<input id="productPromoPrice" type="number" min="0" step="0.01" placeholder="Deixe vazio se não houver promoção"></label>
+          <label class="field">Quantidade mínima da oferta<input id="productPromoMin" type="number" min="1" step="1" value="1"></label>
+          <label class="field">Início da promoção<input id="productPromoStart" type="date"></label>
+          <label class="field">Fim da promoção<input id="productPromoEnd" type="date"></label>
+          <label class="field field-full">Observação da oferta<input id="productPromoNote" maxlength="100" placeholder="Ex.: Oferta de fim de semana ou leve 3 e pague menos"></label>
+        </div></div>
+        <div class="modal-section"><h3>Estoque e rastreabilidade</h3><div class="form-grid">
+          <label class="field">Quantidade atual<input id="productStock" type="number" min="0" step="0.001" value="0"><small class="field-hint">Em produtos já cadastrados, use “Ajustar estoque” para manter o histórico de movimentações.</small></label>
+          <label class="field">Estoque mínimo<input id="productMinStock" type="number" min="0" step="0.001" value="5"></label>
+          <label class="field">Estoque máximo<input id="productMaxStock" type="number" min="0" step="0.001" value="100"></label>
+          <label class="field">Lote<input id="productLot" maxlength="50" placeholder="Identificação do lote"></label>
+          <label class="field">Data de validade<input id="productExpiry" type="date"></label>
+          <label class="field">Localização<input id="productLocation" maxlength="60" placeholder="Ex.: Corredor 2 / Prateleira B"></label>
+          <label class="checkbox-field field-full"><input id="productActive" type="checkbox" checked><span>Produto ativo e disponível para venda</span></label>
+        </div></div>
+        <div class="modal-actions"><button class="button button-outline" type="button" data-close-modal>Cancelar</button><button class="button button-primary" type="submit">Salvar produto</button></div>
+      </form>
+    </section>
+  </div>
+
+  <!-- MODAL DE AJUSTE DE ESTOQUE -->
+  <div class="modal-backdrop" id="stockModal" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="stockModalTitle"><div class="modal-header"><div><span class="eyebrow">MOVIMENTAÇÃO</span><h2 id="stockModalTitle">Ajustar estoque</h2><p>Registre entrada, saída ou perda com justificativa.</p></div><button class="icon-button" type="button" data-close-modal aria-label="Fechar">×</button></div><form id="stockForm"><label class="field">Produto<select id="stockProductSelect" required></select></label><label class="field">Tipo de movimentação<select id="stockMovementType"><option value="entry">Entrada</option><option value="exit">Saída</option><option value="loss">Perda / quebra</option><option value="count">Definir saldo contado</option></select></label><label class="field">Quantidade<input id="stockMovementQuantity" type="number" min="0.001" step="0.001" required></label><label class="field">Motivo<input id="stockMovementReason" required maxlength="120" placeholder="Ex.: recebimento de compra, avaria..."></label><div class="modal-actions"><button class="button button-outline" type="button" data-close-modal>Cancelar</button><button class="button button-primary" type="submit">Registrar movimentação</button></div></form></section></div>
+
+  <!-- MODAL DE FORNECEDOR -->
+  <div class="modal-backdrop" id="supplierModal" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="supplierModalTitle"><div class="modal-header"><div><span class="eyebrow">ABASTECIMENTO</span><h2 id="supplierModalTitle">Novo fornecedor</h2><p>Adicione um contato à base de fornecedores local.</p></div><button class="icon-button" type="button" data-close-modal aria-label="Fechar">×</button></div><form id="supplierForm"><label class="field">Nome da empresa *<input id="supplierName" required></label><label class="field">Categoria atendida<input id="supplierCategory" placeholder="Ex.: Mercearia, bebidas..."></label><label class="field">Telefone / WhatsApp<input id="supplierPhone" placeholder="(61) 90000-0000"></label><label class="field">Prazo médio de entrega<input id="supplierLeadTime" placeholder="Ex.: 2 dias úteis"></label><label class="field">Condição comercial<input id="supplierTerms" placeholder="Ex.: 28 dias, PIX, boleto..."></label><div class="modal-actions"><button class="button button-outline" type="button" data-close-modal>Cancelar</button><button class="button button-primary" type="submit">Salvar fornecedor</button></div></form></section></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

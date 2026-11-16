@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mercado Confiança | Smart Market</title>
+
+    <meta name="description" content="Mercado Confiança: suas compras mais simples, inteligentes e econômicas.">
+    <meta name="theme-color" content="#071a32">
+
+    <link rel="stylesheet" href="iamercado.css">
+</head>
+<body>
+<!-- =========================================
+     COMPRA INTELIGENTE — MERCADO CONFIANÇA
+========================================= -->
+
+<section class="smart-shopping-section" id="compra-inteligente">
+
+    <div class="smart-shopping-container">
+
+        <!-- CABEÇALHO -->
+
+        <div class="smart-shopping-heading">
+
+            <span class="section-tag">
+                PLANEJE MELHOR. ECONOMIZE MAIS.
+            </span>
+
+            <h2>
+                Sua compra, <span>do seu jeito.</span>
+            </h2>
+
+            <p>
+                Conte o que precisa ou informe quanto deseja gastar.
+                Nós ajudamos você a organizar suas compras.
+            </p>
+<!-- HISTÓRICO DE PLANEJAMENTOS -->
+
+<section class="ci-history-section">
+
+    <div class="ci-history-heading">
+
+        <div>
+
+            <span class="list-label">SEUS PLANEJAMENTOS</span>
+
+            <h3>Histórico de compras</h3>
+
+            <p>
+                Acesse suas listas anteriores e continue de onde parou.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="ci-secondary-button"
+            id="ciSavePlan">
+
+            <span>▣</span>
+            Salvar planejamento
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="ci-history-list"
+        id="ciHistoryList">
+
+        <div class="ci-history-empty">
+
+            <span>▤</span>
+
+            <strong>Nenhum planejamento salvo</strong>
+
+            <p>
+                Quando você salvar uma lista, ela aparecerá aqui.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+        </div>
+
+
+        <!-- MODOS DE COMPRA -->
+
+        <div class="shopping-mode-selector">
+
+            <button
+                type="button"
+                class="shopping-mode-button active"
+                id="ciGoalMode"
+                data-mode="goal"
+                aria-selected="true">
+
+                <span class="mode-icon">✦</span>
+
+                <span class="mode-information">
+                    <strong>Compra por objetivo</strong>
+                    <small>
+                        Diga o que precisa comprar e informe seu orçamento.
+                    </small>
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="shopping-mode-button"
+                id="ciManualMode"
+                data-mode="manual"
+                aria-selected="false">
+
+                <span class="mode-icon">☷</span>
+
+                <span class="mode-information">
+                    <strong>Montar manualmente</strong>
+                    <small>
+                        Escolha os produtos e monte sua própria lista.
+                    </small>
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- ÁREA PRINCIPAL -->
+
+        <div class="smart-shopping-workspace">
+
+
+            <!-- =================================
+                 CONFIGURAÇÃO DA COMPRA
+            ================================== -->
+
+            <div class="shopping-configuration">
+
+
+                <!-- MODO POR OBJETIVO -->
+
+                <div
+                    class="shopping-form-panel active"
+                    id="ciGoalPanel"
+                    data-panel="goal">
+
+                    <div class="shopping-panel-heading">
+
+                        <span class="panel-step">01</span>
+
+                        <div>
+                            <h3>Planeje sua compra</h3>
+
+                            <p>
+                                Informe sua necessidade e deixe o sistema
+                                preparar uma sugestão de produtos.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form id="ciGoalForm">
+
+
+                        <!-- FINALIDADE -->
+
+                        <div class="form-group">
+
+                            <label for="ciGoal">
+                                O que você deseja comprar?
+                            </label>
+
+                            <select
+                                id="ciGoal"
+                                name="goal"
+                                required>
+
+                                <option value="">
+                                    Selecione a finalidade
+                                </option>
+
+                                <option value="monthly">
+                                    Compras do mês
+                                </option>
+
+                                <option value="weekly">
+                                    Compras da semana
+                                </option>
+
+                                <option value="barbecue">
+                                    Churrasco
+                                </option>
+
+                                <option value="cleaning">
+                                    Produtos de limpeza
+                                </option>
+
+                                <option value="personal">
+                                    Compra personalizada
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ORÇAMENTO -->
+
+                        <div class="form-group">
+
+                            <label for="ciBudget">
+                                Quanto pretende gastar?
+                            </label>
+
+                            <div class="budget-input-wrapper">
+
+                                <span>R$</span>
+
+                                <input
+                                    type="number"
+                                    id="ciBudget"
+                                    name="budget"
+                                    placeholder="250,00"
+                                    min="1"
+                                    step="0.01"
+                                    required>
+
+                            </div>
+
+                            <small>
+                                Defina o limite que deseja respeitar na compra.
+                            </small>
+
+                        </div>
+
+
+                        <!-- QUANTIDADE DE PESSOAS -->
+
+                        <div class="form-group">
+
+                            <label for="ciPeople">
+                                Para quantas pessoas?
+                            </label>
+
+                            <input
+                                type="number"
+                                id="ciPeople"
+                                name="people"
+                                placeholder="Ex.: 4"
+                                min="1"
+                                max="100"
+                                value="1">
+
+                            <small>
+                                Essa informação ajuda a estimar as quantidades.
+                            </small>
+
+                        </div>
+
+
+                        <!-- INFORMAÇÕES PERSONALIZADAS -->
+
+                        <div class="form-group">
+
+                            <label for="ciAdditionalInfo">
+                                Conte mais sobre sua necessidade
+                                <span>(opcional)</span>
+                            </label>
+
+                            <textarea
+                                id="ciAdditionalInfo"
+                                name="additionalInfo"
+                                rows="4"
+                                placeholder="Ex.: Quero fazer as compras do mês para quatro pessoas, priorizando produtos econômicos, arroz, feijão, carnes e itens de higiene."></textarea>
+
+                            <small>
+                                Você pode informar preferências, marcas,
+                                restrições de produtos e outras necessidades.
+                            </small>
+
+                        </div>
+<!-- PREFERÊNCIAS DA COMPRA -->
+
+<div class="form-group">
+
+    <label for="ciPreferences">
+        Preferências de compra
+    </label>
+
+    <select id="ciPreferences" name="preferences">
+
+        <option value="economy">Priorizar economia</option>
+        <option value="quality">Priorizar qualidade</option>
+        <option value="balance" selected>Equilibrar preço e qualidade</option>
+        <option value="brands">Priorizar marcas conhecidas</option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="ciRestrictions">
+        Restrições e preferências alimentares
+    </label>
+
+    <textarea
+        id="ciRestrictions"
+        name="restrictions"
+        rows="3"
+        placeholder="Ex.: não incluir produtos com lactose, evitar açúcar, preferência por produtos integrais..."></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="ciPreferredBrands">
+        Marcas de preferência
+        <span>(opcional)</span>
+    </label>
+
+    <input
+        type="text"
+        id="ciPreferredBrands"
+        name="preferredBrands"
+        placeholder="Ex.: Nestlé, Italac, Sadia...">
+
+</div>
+                        <!-- BOTÃO DE GERAÇÃO -->
+
+                        <button
+                            type="submit"
+                            class="ci-primary-button"
+                            id="ciGenerateButton">
+
+                            <span>✦</span>
+                            Gerar minha lista de compras
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- =================================
+                     MODO MANUAL
+                ================================== -->
+
+                <div
+                    class="shopping-form-panel"
+                    id="ciManualPanel"
+                    data-panel="manual"
+                    hidden>
+
+                    <div class="shopping-panel-heading">
+
+                        <span class="panel-step">01</span>
+
+                        <div>
+                            <h3>Monte sua própria lista</h3>
+
+                            <p>
+                                Selecione os produtos do catálogo e controle
+                                o valor de cada compra.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form id="ciManualForm">
+
+
+                        <!-- ORÇAMENTO MANUAL -->
+
+                        <div class="form-group">
+
+                            <label for="ciManualBudget">
+                                Qual é o seu orçamento?
+                            </label>
+
+                            <div class="budget-input-wrapper">
+
+                                <span>R$</span>
+
+                                <input
+                                    type="number"
+                                    id="ciManualBudget"
+                                    name="manualBudget"
+                                    placeholder="250,00"
+                                    min="1"
+                                    step="0.01"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRODUTO -->
+
+                        <div class="form-group">
+
+                            <label for="ciProductSelect">
+                                Escolha um produto
+                            </label>
+
+                            <select
+                                id="ciProductSelect"
+                                name="product"
+                                required>
+
+                                <option value="">
+                                    Carregando produtos...
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- QUANTIDADE -->
+
+                        <div class="form-group">
+
+                            <label for="ciProductQuantity">
+                                Quantidade
+                            </label>
+
+                            <input
+                                type="number"
+                                id="ciProductQuantity"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                max="99"
+                                required>
+
+                        </div>
+
+
+                        <!-- ADICIONAR PRODUTO -->
+
+                        <button
+                            type="submit"
+                            class="ci-primary-button"
+                            id="ciAddProductButton">
+
+                            <span>+</span>
+                            Adicionar à minha lista
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- AVISO -->
+
+                <div class="shopping-security-note">
+
+                    <span>✓</span>
+
+                    <p>
+                        Você mantém o controle da sua compra.
+                        Os produtos, preços e quantidades devem corresponder
+                        às informações disponíveis no catálogo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 LISTA DE COMPRAS
+            ================================== -->
+
+            <div class="shopping-list-panel">
+
+
+                <!-- CABEÇALHO DA LISTA -->
+
+                <div class="shopping-list-header">
+
+                    <div>
+
+                        <span class="list-label">
+                            SEU PLANEJAMENTO
+                        </span>
+
+                        <h3>Minha lista de compras</h3>
+
+                    </div>
+
+                    <span class="shopping-list-icon">🛒</span>
+
+                </div>
+
+
+
+                <!-- RESUMO FINANCEIRO -->
+
+                <div class="shopping-budget-summary">
+
+
+                    <div class="budget-summary-top">
+
+                        <span>Orçamento disponível</span>
+
+                        <strong id="ciBudgetDisplay">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- BARRA DE PROGRESSO -->
+
+                    <div class="budget-progress-track">
+
+                        <div
+                            class="budget-progress-fill"
+                            id="ciBudgetProgress"
+                            style="width: 0%;">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- VALORES -->
+
+                    <div class="budget-summary-values">
+
+                        <div>
+
+                            <span>Valor utilizado</span>
+
+                            <strong id="ciSpent">
+                                R$ 0,00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Saldo restante</span>
+
+                            <strong id="ciRemaining">
+                                R$ 0,00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+<!-- DISTRIBUIÇÃO DO ORÇAMENTO -->
+
+<div class="ci-budget-distribution">
+
+    <div class="ci-section-heading">
+
+        <div>
+            <span class="list-label">CONTROLE FINANCEIRO</span>
+            <h4>Distribuição do orçamento</h4>
+        </div>
+
+        <span class="ci-distribution-icon">◒</span>
+
+    </div>
+
+    <p class="ci-section-description">
+        Acompanhe quanto está sendo destinado a cada categoria.
+    </p>
+
+    <div id="ciCategoryDistribution">
+
+        <div class="ci-distribution-empty">
+            A distribuição aparecerá quando sua lista tiver produtos.
+        </div>
+
+    </div>
+
+</div>
+
+                <!-- PRODUTOS DA LISTA -->
+
+                <div class="shopping-items-container">
+
+
+                    <!-- LISTA VAZIA -->
+
+                    <div
+                        class="shopping-empty-state"
+                        id="ciEmptyState">
+
+                        <span class="empty-state-icon">🧺</span>
+
+                        <h4>Sua lista está vazia</h4>
+
+                        <p>
+                            Informe seu objetivo ou adicione produtos
+                            manualmente para começar.
+                        </p>
+
+                    </div>
+
+
+                    <!-- PRODUTOS INSERIDOS PELO JAVASCRIPT -->
+
+                    <div
+                        class="shopping-items-list"
+                        id="ciShoppingItems">
+
+                        <!--
+                            Os produtos serão inseridos dinamicamente
+                            pelo JavaScript.
+                        -->
+
+                    </div>
+
+                </div>
+
+<!-- SUGESTÕES ECONÔMICAS -->
+
+<div class="ci-economy-panel">
+
+    <div class="ci-section-heading">
+
+        <div>
+            <span class="list-label">OPORTUNIDADES DE ECONOMIA</span>
+            <h4>Você pode economizar mais</h4>
+        </div>
+
+        <span class="ci-economy-icon">↘</span>
+
+    </div>
+
+    <p class="ci-section-description">
+        Confira alternativas que podem reduzir o valor da sua compra.
+    </p>
+
+    <div id="ciEconomySuggestions">
+
+        <div class="ci-suggestion-empty">
+            As sugestões econômicas aparecerão conforme os produtos
+            forem adicionados à lista.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUTOS ALTERNATIVOS -->
+
+<div class="ci-substitution-panel" id="ciSubstitutionPanel" hidden>
+
+    <div class="ci-section-heading">
+
+        <div>
+            <span class="list-label">ALTERNATIVAS</span>
+            <h4>Escolha um substituto</h4>
+        </div>
+
+        <button
+            type="button"
+            id="ciCloseSubstitution"
+            aria-label="Fechar alternativas">
+            ×
+        </button>
+
+    </div>
+
+    <div id="ciSubstitutionProducts">
+
+        <!-- Alternativas inseridas pelo JavaScript -->
+
+    </div>
+
+</div>
+
+
+<!-- EXPLICAÇÃO DAS RECOMENDAÇÕES -->
+
+<div class="ci-explanation-panel">
+
+    <div class="ci-section-heading">
+
+        <div>
+            <span class="list-label">TRANSPARÊNCIA</span>
+            <h4>Por que esses produtos?</h4>
+        </div>
+
+        <span class="ci-explanation-icon">✦</span>
+
+    </div>
+
+    <div id="ciRecommendationExplanation">
+
+        <p>
+            Quando uma lista for gerada, você poderá consultar
+            os motivos das recomendações, como preço, quantidade,
+            finalidade e adequação ao orçamento.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ALERTA DE ORÇAMENTO -->
+
+<div
+    class="ci-budget-alert"
+    id="ciBudgetAlert"
+    role="status"
+    aria-live="polite"
+    hidden>
+
+    <span class="ci-alert-icon">!</span>
+
+    <div>
+
+        <strong id="ciBudgetAlertTitle">
+            Atenção ao orçamento
+        </strong>
+
+        <p id="ciBudgetAlertMessage">
+            Sua lista está próxima do limite definido.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- AVISO DE INDISPONIBILIDADE -->
+
+<div
+    class="ci-stock-alert"
+    id="ciStockAlert"
+    role="status"
+    aria-live="polite"
+    hidden>
+
+    <strong>Produto indisponível</strong>
+
+    <p>
+        Um dos produtos selecionados não está disponível.
+        Confira as alternativas sugeridas.
+    </p>
+
+    <div id="ciStockAlternatives">
+
+        <!-- Alternativas inseridas pelo JavaScript -->
+
+    </div>
+
+</div>
+
+                <!-- RODAPÉ DA LISTA -->
+
+                <div class="shopping-list-footer">
+
+
+                    <!-- TOTAL -->
+
+                    <div class="shopping-total">
+
+                        <span>Total da compra</span>
+
+                        <strong id="ciTotal">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- AÇÕES -->
+
+                    <div class="shopping-list-actions">
+
+
+                        <button
+                            type="button"
+                            class="ci-clear-button"
+                            id="ciClearList">
+
+                            Limpar lista
+
+                        </button>
+
+<button
+    type="button"
+    class="ci-secondary-button"
+    id="ciSaveCurrentList">
+
+    Salvar lista
+
+</button>
+                        <button
+                            type="button"
+                            class="ci-cart-button"
+                            id="ciSendToCart"
+                            disabled>
+
+                            <span>🛒</span>
+                            Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+<!-- COMPARAÇÃO DE ORÇAMENTOS -->
+
+<section class="ci-comparison-section">
+
+    <div class="ci-section-heading">
+
+        <div>
+            <span class="list-label">SIMULE SUA COMPRA</span>
+            <h3>Compare diferentes orçamentos</h3>
+        </div>
+
+    </div>
+
+    <p class="ci-section-description">
+        Descubra como sua lista poderia mudar com diferentes
+        valores disponíveis.
+    </p>
+
+
+    <div class="ci-comparison-input">
+
+        <div class="form-group">
+
+            <label for="ciComparisonBudget">
+                Informe outro orçamento
+            </label>
+
+            <div class="budget-input-wrapper">
+
+                <span>R$</span>
+
+                <input
+                    type="number"
+                    id="ciComparisonBudget"
+                    min="1"
+                    step="0.01"
+                    placeholder="400,00">
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="ci-secondary-button"
+            id="ciCompareBudgets">
+
+            Comparar orçamento
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="ci-comparison-results"
+        id="ciComparisonResults"
+        hidden>
+
+        <div class="ci-comparison-card">
+
+            <span>Orçamento atual</span>
+
+            <strong id="ciCurrentComparison">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="ci-comparison-card">
+
+            <span>Novo orçamento</span>
+
+            <strong id="ciNewComparison">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="ci-comparison-card">
+
+            <span>Diferença</span>
+
+            <strong id="ciComparisonDifference">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+        <div
+            class="ci-comparison-analysis"
+            id="ciComparisonAnalysis">
+
+            <!-- Análise gerada pelo JavaScript -->
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- =================================
+             RODAPÉ DA FUNCIONALIDADE
+        ================================== -->
+
+        <div class="smart-shopping-footer">
+
+            <div class="smart-footer-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <strong>
+                    Comprar melhor começa com planejamento.
+                </strong>
+
+                <p>
+                    Organize suas necessidades, respeite seu orçamento
+                    e tenha mais praticidade nas compras do dia a dia.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     FIM — COMPRA INTELIGENTE
+========================================= -->
+<script src="iamercado.js"></script>
+<</body>
+</html>

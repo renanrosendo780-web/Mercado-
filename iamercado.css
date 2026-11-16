@@ -1,0 +1,1389 @@
+
+/* =========================================================
+   MERCADO CONFIANÇA — COMPRA INTELIGENTE
+   Design System — Smart Shopping
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES
+========================================================= */
+
+:root {
+    --ci-navy: #071a32;
+    --ci-navy-light: #102b50;
+    --ci-navy-soft: #173b60;
+
+    --ci-green: #00b894;
+    --ci-green-dark: #009b7b;
+    --ci-green-light: #45f5bd;
+    --ci-green-pale: #e4fff5;
+
+    --ci-white: #ffffff;
+    --ci-background: #f4f7fc;
+    --ci-background-soft: #eef3f9;
+
+    --ci-text: #172b46;
+    --ci-muted: #718096;
+    --ci-border: #e1e9f3;
+
+    --ci-danger: #dc4545;
+    --ci-danger-bg: #fff1f1;
+
+    --ci-warning: #d58b20;
+    --ci-warning-bg: #fff8e9;
+
+    --ci-shadow:
+        0 12px 35px rgba(7, 26, 50, 0.06);
+
+    --ci-radius: 12px;
+}
+
+
+/* =========================================================
+   2. SEÇÃO PRINCIPAL
+========================================================= */
+
+.smart-shopping-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 5%;
+    background: var(--ci-background);
+    overflow: hidden;
+}
+
+.smart-shopping-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   3. CABEÇALHO
+========================================================= */
+
+.smart-shopping-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--ci-green-dark);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.smart-shopping-heading h2 {
+    margin: 0 0 16px;
+    color: var(--ci-navy);
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.smart-shopping-heading h2 span {
+    color: var(--ci-green-dark);
+}
+
+.smart-shopping-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--ci-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   4. SELETOR DE MODOS
+========================================================= */
+
+.shopping-mode-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 850px;
+    margin: 0 auto 30px;
+}
+
+.shopping-mode-button {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    min-height: 105px;
+    padding: 20px;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: var(--ci-radius);
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.shopping-mode-button:hover {
+    border-color: var(--ci-green);
+    transform: translateY(-2px);
+}
+
+.shopping-mode-button.active {
+    background: var(--ci-green-pale);
+    border: 1.5px solid var(--ci-green);
+    box-shadow: 0 5px 18px rgba(0, 184, 148, 0.08);
+}
+
+.mode-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--ci-background-soft);
+    color: var(--ci-navy);
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.shopping-mode-button.active .mode-icon {
+    background: var(--ci-green);
+    color: var(--ci-white);
+}
+
+.mode-information {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.mode-information strong {
+    color: var(--ci-navy);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.mode-information small {
+    color: var(--ci-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   5. ÁREA PRINCIPAL
+========================================================= */
+
+.smart-shopping-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: 25px;
+}
+
+.shopping-configuration,
+.shopping-list-panel {
+    min-width: 0;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: 14px;
+    box-shadow: var(--ci-shadow);
+}
+
+
+/* =========================================================
+   6. CONFIGURAÇÃO DA COMPRA
+========================================================= */
+
+.shopping-configuration {
+    padding: 28px;
+}
+
+.shopping-panel-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.panel-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 37px;
+    height: 37px;
+    background: var(--ci-green-pale);
+    color: var(--ci-green-dark);
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.shopping-panel-heading h3 {
+    margin: 2px 0 7px;
+    color: var(--ci-navy);
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.shopping-panel-heading p {
+    margin: 0;
+    color: var(--ci-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   7. PAINÉIS E FORMULÁRIOS
+========================================================= */
+
+.shopping-form-panel {
+    display: none;
+}
+
+.shopping-form-panel.active {
+    display: block;
+}
+
+.shopping-form-panel[hidden] {
+    display: none !important;
+}
+
+.shopping-form-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    color: var(--ci-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-group label span {
+    color: var(--ci-muted);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 14px;
+    background: #fbfcfe;
+    color: var(--ci-text);
+    border: 1px solid var(--ci-border);
+    border-radius: 7px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group textarea {
+    min-height: 105px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--ci-green);
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.10);
+    background: var(--ci-white);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0acba;
+}
+
+.form-group small {
+    color: var(--ci-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   8. CAMPO DE ORÇAMENTO
+========================================================= */
+
+.budget-input-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    background: #fbfcfe;
+    border: 1px solid var(--ci-border);
+    border-radius: 7px;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.budget-input-wrapper:focus-within {
+    border-color: var(--ci-green);
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.10);
+}
+
+.budget-input-wrapper span {
+    padding-left: 15px;
+    color: var(--ci-muted);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.budget-input-wrapper input {
+    min-height: 48px;
+    border: none;
+    background: transparent;
+    box-shadow: none !important;
+}
+
+.budget-input-wrapper input:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   9. BOTÕES PRINCIPAIS
+========================================================= */
+
+.ci-primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 51px;
+    padding: 13px 18px;
+    background: var(--ci-green);
+    color: var(--ci-white);
+    border: 1px solid var(--ci-green);
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.ci-primary-button:hover {
+    background: var(--ci-green-dark);
+    border-color: var(--ci-green-dark);
+    transform: translateY(-1px);
+}
+
+.ci-primary-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ci-primary-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   10. AVISO DE SEGURANÇA
+========================================================= */
+
+.shopping-security-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 25px;
+    padding: 14px;
+    background: var(--ci-green-pale);
+    border-radius: 8px;
+}
+
+.shopping-security-note > span {
+    color: var(--ci-green-dark);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.shopping-security-note p {
+    margin: 0;
+    color: #427465;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   11. PAINEL DA LISTA
+========================================================= */
+
+.shopping-list-panel {
+    overflow: hidden;
+}
+
+.shopping-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 27px;
+    border-bottom: 1px solid var(--ci-border);
+}
+
+.list-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ci-green-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.shopping-list-header h3 {
+    margin: 0;
+    color: var(--ci-navy);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.shopping-list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    background: var(--ci-green-pale);
+    border-radius: 9px;
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   12. RESUMO FINANCEIRO
+========================================================= */
+
+.shopping-budget-summary {
+    margin: 22px 25px;
+    padding: 20px;
+    background: var(--ci-background);
+    border: 1px solid var(--ci-border);
+    border-radius: 10px;
+}
+
+.budget-summary-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.budget-summary-top span {
+    color: var(--ci-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.budget-summary-top strong {
+    color: var(--ci-navy);
+    font-size: 22px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.budget-progress-track {
+    width: 100%;
+    height: 9px;
+    background: #dce6ee;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.budget-progress-fill {
+    width: 0;
+    height: 100%;
+    background: var(--ci-green);
+    border-radius: 20px;
+    transition: width 0.35s ease, background 0.25s ease;
+}
+
+.budget-progress-fill.warning {
+    background: var(--ci-warning);
+}
+
+.budget-progress-fill.danger {
+    background: var(--ci-danger);
+}
+
+.budget-summary-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.budget-summary-values > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.budget-summary-values span {
+    color: var(--ci-muted);
+    font-size: 11px;
+}
+
+.budget-summary-values strong {
+    color: var(--ci-navy);
+    font-size: 16px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.budget-summary-values > div:last-child strong {
+    color: var(--ci-green-dark);
+}
+
+.budget-summary-values > div:last-child strong.negative {
+    color: var(--ci-danger);
+}
+
+
+/* =========================================================
+   13. PRODUTOS DA LISTA
+========================================================= */
+
+.shopping-items-container {
+    min-height: 190px;
+    padding: 0 25px;
+}
+
+.shopping-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.shopping-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 185px;
+    padding: 20px;
+    text-align: center;
+}
+
+.empty-state-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 59px;
+    height: 59px;
+    margin-bottom: 13px;
+    background: var(--ci-background-soft);
+    border-radius: 50%;
+    font-size: 26px;
+}
+
+.shopping-empty-state h4 {
+    margin: 0 0 8px;
+    color: var(--ci-navy);
+    font-size: 15px;
+}
+
+.shopping-empty-state p {
+    max-width: 270px;
+    margin: 0;
+    color: var(--ci-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   14. RODAPÉ E TOTAL
+========================================================= */
+
+.shopping-list-footer {
+    margin-top: 25px;
+    padding: 23px 25px;
+    background: #fbfcfe;
+    border-top: 1px solid var(--ci-border);
+}
+
+.shopping-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.shopping-total span {
+    color: var(--ci-navy);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.shopping-total strong {
+    color: var(--ci-navy);
+    font-size: 25px;
+    font-weight: 850;
+    font-variant-numeric: tabular-nums;
+}
+
+.shopping-list-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.ci-clear-button,
+.ci-cart-button,
+.ci-secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 45px;
+    padding: 11px 15px;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ci-clear-button {
+    flex: 0 0 auto;
+    background: var(--ci-white);
+    color: var(--ci-muted);
+    border: 1px solid var(--ci-border);
+}
+
+.ci-clear-button:hover {
+    color: var(--ci-danger);
+    border-color: var(--ci-danger);
+}
+
+.ci-cart-button {
+    flex: 1;
+    background: var(--ci-navy);
+    color: var(--ci-white);
+    border: 1px solid var(--ci-navy);
+}
+
+.ci-cart-button:hover:not(:disabled) {
+    background: var(--ci-navy-light);
+    transform: translateY(-1px);
+}
+
+.ci-cart-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   15. DISTRIBUIÇÃO DO ORÇAMENTO
+========================================================= */
+
+.ci-budget-distribution,
+.ci-economy-panel,
+.ci-explanation-panel,
+.ci-substitution-panel {
+    margin: 25px;
+    padding: 20px;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: 10px;
+}
+
+.ci-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.ci-section-heading h4,
+.ci-section-heading h3 {
+    margin: 0;
+    color: var(--ci-navy);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.ci-section-description {
+    margin: 0 0 17px;
+    color: var(--ci-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.ci-distribution-icon,
+.ci-economy-icon,
+.ci-explanation-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 37px;
+    height: 37px;
+    background: var(--ci-green-pale);
+    color: var(--ci-green-dark);
+    border-radius: 8px;
+    font-size: 19px;
+}
+
+.ci-distribution-empty,
+.ci-suggestion-empty {
+    padding: 17px;
+    background: var(--ci-background);
+    color: var(--ci-muted);
+    border-radius: 7px;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   16. SUGESTÕES ECONÔMICAS
+========================================================= */
+
+.ci-economy-panel {
+    background: #fbfefc;
+}
+
+.ci-suggestion-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 13px;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: 8px;
+}
+
+.ci-suggestion-card + .ci-suggestion-card {
+    margin-top: 10px;
+}
+
+.ci-suggestion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ci-suggestion-info strong {
+    color: var(--ci-navy);
+    font-size: 12px;
+}
+
+.ci-suggestion-info small {
+    color: var(--ci-muted);
+    font-size: 10px;
+}
+
+.ci-suggestion-saving {
+    color: var(--ci-green-dark);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   17. SUBSTITUIÇÃO DE PRODUTOS
+========================================================= */
+
+.ci-substitution-panel {
+    background: var(--ci-background);
+}
+
+.ci-substitution-panel[hidden] {
+    display: none !important;
+}
+
+#ciCloseSubstitution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--ci-white);
+    color: var(--ci-muted);
+    border: 1px solid var(--ci-border);
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.ci-substitution-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: 8px;
+}
+
+.ci-substitution-option + .ci-substitution-option {
+    margin-top: 9px;
+}
+
+.ci-substitution-option strong {
+    color: var(--ci-navy);
+    font-size: 12px;
+}
+
+.ci-substitution-option span {
+    color: var(--ci-green-dark);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   18. EXPLICAÇÃO DAS RECOMENDAÇÕES
+========================================================= */
+
+.ci-explanation-panel {
+    background: #fbfcff;
+}
+
+#ciRecommendationExplanation {
+    padding: 13px;
+    background: var(--ci-background);
+    border-left: 3px solid var(--ci-green);
+    border-radius: 4px;
+}
+
+#ciRecommendationExplanation p {
+    margin: 0;
+    color: var(--ci-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   19. ALERTAS
+========================================================= */
+
+.ci-budget-alert,
+.ci-stock-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 20px 25px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.ci-budget-alert {
+    background: var(--ci-warning-bg);
+    border: 1px solid #f0dfb8;
+}
+
+.ci-stock-alert {
+    display: block;
+    background: var(--ci-danger-bg);
+    border: 1px solid #f2cccc;
+}
+
+.ci-budget-alert[hidden],
+.ci-stock-alert[hidden] {
+    display: none !important;
+}
+
+.ci-alert-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    background: var(--ci-warning);
+    color: var(--ci-white);
+    border-radius: 50%;
+    font-weight: 800;
+}
+
+.ci-budget-alert strong,
+.ci-stock-alert strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #805716;
+    font-size: 12px;
+}
+
+.ci-budget-alert p,
+.ci-stock-alert p {
+    margin: 0;
+    color: #92713b;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.ci-stock-alert strong {
+    color: var(--ci-danger);
+}
+
+.ci-stock-alert p {
+    color: #a15b5b;
+}
+
+
+/* =========================================================
+   20. COMPARAÇÃO DE ORÇAMENTOS
+========================================================= */
+
+.ci-comparison-section {
+    margin-top: 35px;
+    padding: 27px;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: 12px;
+    box-shadow: var(--ci-shadow);
+}
+
+.ci-comparison-section > .ci-section-heading {
+    margin-bottom: 10px;
+}
+
+.ci-comparison-section h3 {
+    margin: 0;
+    color: var(--ci-navy);
+    font-size: 20px;
+}
+
+.ci-comparison-input {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 15px;
+}
+
+.ci-secondary-button {
+    background: var(--ci-white);
+    color: var(--ci-navy);
+    border: 1px solid var(--ci-border);
+}
+
+.ci-secondary-button:hover {
+    color: var(--ci-green-dark);
+    border-color: var(--ci-green);
+}
+
+.ci-comparison-input .ci-secondary-button {
+    min-width: 180px;
+    background: var(--ci-navy);
+    color: var(--ci-white);
+    border-color: var(--ci-navy);
+}
+
+.ci-comparison-input .ci-secondary-button:hover {
+    background: var(--ci-navy-light);
+}
+
+.ci-comparison-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 23px;
+}
+
+.ci-comparison-results[hidden] {
+    display: none !important;
+}
+
+.ci-comparison-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 17px;
+    background: var(--ci-background);
+    border: 1px solid var(--ci-border);
+    border-radius: 8px;
+}
+
+.ci-comparison-card span {
+    color: var(--ci-muted);
+    font-size: 11px;
+}
+
+.ci-comparison-card strong {
+    color: var(--ci-navy);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.ci-comparison-analysis {
+    grid-column: 1 / -1;
+    padding: 15px;
+    background: var(--ci-green-pale);
+    color: #427465;
+    border-radius: 7px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   21. HISTÓRICO
+========================================================= */
+
+.ci-history-section {
+    margin-top: 25px;
+    padding: 27px;
+    background: var(--ci-white);
+    border: 1px solid var(--ci-border);
+    border-radius: 12px;
+    box-shadow: var(--ci-shadow);
+}
+
+.ci-history-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.ci-history-heading h3 {
+    margin: 0 0 8px;
+    color: var(--ci-navy);
+    font-size: 20px;
+}
+
+.ci-history-heading p {
+    margin: 0;
+    color: var(--ci-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.ci-history-heading .ci-secondary-button {
+    flex-shrink: 0;
+}
+
+.ci-history-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+    background: var(--ci-background);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ci-history-empty > span {
+    margin-bottom: 12px;
+    color: var(--ci-green-dark);
+    font-size: 28px;
+}
+
+.ci-history-empty strong {
+    margin-bottom: 7px;
+    color: var(--ci-navy);
+    font-size: 13px;
+}
+
+.ci-history-empty p {
+    margin: 0;
+    color: var(--ci-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   22. RODAPÉ DA FUNCIONALIDADE
+========================================================= */
+
+.smart-shopping-footer {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 30px;
+    padding: 23px;
+    background: var(--ci-navy);
+    border-radius: 10px;
+}
+
+.smart-footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 184, 148, 0.16);
+    color: var(--ci-green-light);
+    border-radius: 9px;
+    font-size: 23px;
+}
+
+.smart-shopping-footer strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ci-white);
+    font-size: 13px;
+}
+
+.smart-shopping-footer p {
+    margin: 0;
+    color: #b8c8d9;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   23. ESTADOS DE FOCO E ACESSIBILIDADE
+========================================================= */
+
+.smart-shopping-section button:focus-visible,
+.smart-shopping-section input:focus-visible,
+.smart-shopping-section select:focus-visible,
+.smart-shopping-section textarea:focus-visible {
+    outline: 2px solid var(--ci-green);
+    outline-offset: 3px;
+}
+
+.smart-shopping-section button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   24. RESPONSIVIDADE — TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .smart-shopping-section {
+        padding: 75px 4%;
+    }
+
+    .smart-shopping-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .shopping-configuration {
+        max-width: 100%;
+    }
+
+    .shopping-list-panel {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   25. RESPONSIVIDADE — CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .smart-shopping-section {
+        padding: 55px 15px;
+    }
+
+    .smart-shopping-heading {
+        margin-bottom: 30px;
+    }
+
+    .smart-shopping-heading h2 {
+        font-size: 30px;
+    }
+
+    .smart-shopping-heading p {
+        font-size: 13px;
+    }
+
+    .shopping-mode-selector {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .shopping-mode-button {
+        min-height: 85px;
+        padding: 15px;
+    }
+
+    .mode-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .mode-information strong {
+        font-size: 13px;
+    }
+
+    .mode-information small {
+        font-size: 11px;
+    }
+
+    .shopping-configuration {
+        padding: 20px 16px;
+    }
+
+    .shopping-panel-heading h3 {
+        font-size: 18px;
+    }
+
+    .shopping-panel-heading p {
+        font-size: 11px;
+    }
+
+    .shopping-list-header {
+        padding: 20px 17px;
+    }
+
+    .shopping-list-header h3 {
+        font-size: 17px;
+    }
+
+    .shopping-budget-summary {
+        margin: 17px;
+        padding: 16px;
+    }
+
+    .budget-summary-top strong {
+        font-size: 19px;
+    }
+
+    .budget-summary-values strong {
+        font-size: 14px;
+    }
+
+    .shopping-items-container {
+        padding: 0 17px;
+    }
+
+    .shopping-list-footer {
+        padding: 19px 17px;
+    }
+
+    .shopping-total strong {
+        font-size: 22px;
+    }
+
+    .shopping-list-actions {
+        flex-direction: column;
+    }
+
+    .ci-clear-button,
+    .ci-cart-button {
+        width: 100%;
+        min-height: 45px;
+    }
+
+    .ci-budget-distribution,
+    .ci-economy-panel,
+    .ci-explanation-panel,
+    .ci-substitution-panel {
+        margin: 17px;
+        padding: 16px;
+    }
+
+    .ci-budget-alert,
+    .ci-stock-alert {
+        margin: 17px;
+    }
+
+    .ci-comparison-section,
+    .ci-history-section {
+        padding: 20px 16px;
+    }
+
+    .ci-comparison-input {
+        grid-template-columns: 1fr;
+    }
+
+    .ci-comparison-input .ci-secondary-button {
+        width: 100%;
+    }
+
+    .ci-comparison-results {
+        grid-template-columns: 1fr;
+    }
+
+    .ci-comparison-analysis {
+        grid-column: auto;
+    }
+
+    .ci-history-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ci-history-heading .ci-secondary-button {
+        width: 100%;
+    }
+
+    .smart-shopping-footer {
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   26. TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .smart-shopping-section {
+        padding-right: 11px;
+        padding-left: 11px;
+    }
+
+    .shopping-configuration {
+        padding: 17px 13px;
+    }
+
+    .shopping-list-header h3 {
+        font-size: 15px;
+    }
+
+    .budget-summary-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .budget-summary-values {
+        gap: 8px;
+    }
+
+    .ci-comparison-section,
+    .ci-history-section {
+        padding: 16px 12px;
+    }
+
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | Mercado Confiança</title>
+
+    <link rel="stylesheet" href="dispensa.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     MINHA DESPENSA DIGITAL
+========================================= -->
+
+<section class="pantry-app section-container" id="despensa">
+
+    <!-- CABEÇALHO -->
+    <header class="section-heading pantry-heading">
+        <div>
+            <span class="section-tag">CONTROLE DA SUA CASA</span>
+            <h2>Minha despensa digital</h2>
+            <p>
+                Acompanhe seus produtos, controle quantidades,
+                evite desperdícios e saiba o que precisa comprar.
+            </p>
+        </div>
+    </header>
+
+    <!-- RESUMO DA DESPENSA -->
+    <div class="pantry-summary" aria-label="Resumo da despensa">
+
+        <article class="pantry-stat">
+            <span class="pantry-stat-icon">📦</span>
+            <div>
+                <span>Total de produtos</span>
+                <strong id="pantryTotalItems">0</strong>
+                <small>Itens cadastrados</small>
+            </div>
+        </article>
+
+        <article class="pantry-stat">
+            <span class="pantry-stat-icon">⚠️</span>
+            <div>
+                <span>Estoque baixo</span>
+                <strong id="pantryLowItems">0</strong>
+                <small>Precisam de atenção</small>
+            </div>
+        </article>
+
+        <article class="pantry-stat">
+            <span class="pantry-stat-icon">📅</span>
+            <div>
+                <span>Próximos do vencimento</span>
+                <strong id="pantryExpiringItems">0</strong>
+                <small>Verifique as validades</small>
+            </div>
+        </article>
+
+        <article class="pantry-stat">
+            <span class="pantry-stat-icon">🧺</span>
+            <div>
+                <span>Unidades na despensa</span>
+                <strong id="pantryUnitCount">0</strong>
+                <small>Quantidade total</small>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="pantry-layout">
+
+        <!-- CADASTRO DE PRODUTOS -->
+        <section class="pantry-form">
+
+            <div class="pantry-form-heading">
+                <div>
+                    <span class="section-tag">GERENCIAMENTO</span>
+                    <h3>Adicionar produto</h3>
+                    <p>Cadastre o que você tem em casa.</p>
+                </div>
+                <span class="pantry-form-icon">＋</span>
+            </div>
+
+            <form id="pantryForm">
+
+                <div class="pantry-field">
+                    <label for="pantryName">Nome do produto</label>
+                    <input
+                        type="text"
+                        id="pantryName"
+                        list="pantryCatalogList"
+                        placeholder="Ex.: Arroz, leite, café..."
+                        autocomplete="off"
+                        required
+                    >
+                    <datalist id="pantryCatalogList"></datalist>
+                </div>
+
+                <div class="pantry-form-grid">
+
+                    <div class="pantry-field">
+                        <label for="pantryQuantity">Quantidade atual</label>
+                        <input
+                            type="number"
+                            id="pantryQuantity"
+                            min="0"
+                            step="0.01"
+                            placeholder="Ex.: 2"
+                            required
+                        >
+                    </div>
+
+                    <div class="pantry-field">
+                        <label for="pantryUnit">Unidade</label>
+                        <select id="pantryUnit" required>
+                            <option value="un">Unidade</option>
+                            <option value="kg">Quilograma (kg)</option>
+                            <option value="g">Grama (g)</option>
+                            <option value="L">Litro (L)</option>
+                            <option value="ml">Mililitro (ml)</option>
+                            <option value="pacote">Pacote</option>
+                            <option value="caixa">Caixa</option>
+                            <option value="dúzia">Dúzia</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="pantry-field">
+                    <label for="pantryMinimum">Estoque mínimo</label>
+                    <input
+                        type="number"
+                        id="pantryMinimum"
+                        min="0"
+                        step="0.01"
+                        value="1"
+                        placeholder="Quantidade mínima desejada"
+                    >
+                    <small>
+                        Você será alertado quando atingir esse limite.
+                    </small>
+                </div>
+
+                <div class="pantry-field">
+                    <label for="pantryCategory">Categoria</label>
+                    <select id="pantryCategory">
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Hortifruti">Hortifruti</option>
+                        <option value="Açougue">Açougue</option>
+                        <option value="Laticínios">Laticínios</option>
+                        <option value="Padaria">Padaria</option>
+                        <option value="Mercearia">Mercearia</option>
+                        <option value="Higiene">Higiene</option>
+                        <option value="Limpeza">Limpeza</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="pantry-field">
+                    <label for="pantryExpiry">Data de validade</label>
+                    <input
+                        type="date"
+                        id="pantryExpiry"
+                    >
+                    <small>
+                        Campo opcional. Ajuda a evitar desperdícios.
+                    </small>
+                </div>
+
+                <button type="submit" class="primary-button pantry-submit">
+                    <span>＋</span>
+                    Adicionar à despensa
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- GERENCIAMENTO DA DESPENSA -->
+        <section class="pantry-manager">
+
+            <div class="pantry-manager-heading">
+                <div>
+                    <span class="section-tag">SEUS PRODUTOS</span>
+                    <h3>Estoque da minha casa</h3>
+                    <p>Consulte e atualize seus produtos.</p>
+                </div>
+
+                <span class="pantry-manager-icon">🧺</span>
+            </div>
+
+            <!-- FILTROS -->
+            <div class="pantry-toolbar">
+
+                <div class="pantry-field pantry-search-field">
+                    <label for="pantrySearch">Pesquisar produto</label>
+                    <input
+                        type="search"
+                        id="pantrySearch"
+                        placeholder="Buscar na despensa..."
+                    >
+                </div>
+
+                <div class="pantry-field">
+                    <label for="pantryCategoryFilter">Categoria</label>
+                    <select id="pantryCategoryFilter">
+                        <option value="all">Todas as categorias</option>
+                        <option value="Hortifruti">Hortifruti</option>
+                        <option value="Açougue">Açougue</option>
+                        <option value="Laticínios">Laticínios</option>
+                        <option value="Padaria">Padaria</option>
+                        <option value="Mercearia">Mercearia</option>
+                        <option value="Higiene">Higiene</option>
+                        <option value="Limpeza">Limpeza</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="pantry-field">
+                    <label for="pantryStatusFilter">Situação</label>
+                    <select id="pantryStatusFilter">
+                        <option value="all">Todas as situações</option>
+                        <option value="low">Estoque baixo</option>
+                        <option value="empty">Sem estoque</option>
+                        <option value="expiring">Próximo do vencimento</option>
+                        <option value="expired">Vencidos</option>
+                        <option value="ok">Estoque normal</option>
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    id="pantryClearFilters"
+                    class="secondary-button"
+                >
+                    Limpar filtros
+                </button>
+
+            </div>
+
+            <!-- LISTA DE PRODUTOS -->
+            <div
+                id="pantryList"
+                class="pantry-list"
+                aria-live="polite"
+            >
+                <!-- Os produtos serão inseridos pelo JavaScript. -->
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- BARRA DE COMPRAS -->
+    <section class="pantry-shoppingbar">
+
+        <div class="pantry-shopping-information">
+            <span class="pantry-shopping-icon">🛒</span>
+            <div>
+                <h3>Lista de reposição</h3>
+                <p>
+                    Adicione ao carrinho os produtos que precisam
+                    ser comprados.
+                </p>
+            </div>
+        </div>
+
+        <div class="pantry-shopping-action">
+            <span>
+                <strong id="pantryShoppingItems">0</strong>
+                produtos para comprar
+            </span>
+
+            <button
+                type="button"
+                id="pantryShoppingButton"
+                class="primary-button"
+            >
+                Adicionar ao carrinho
+            </button>
+        </div>
+
+    </section>
+
+    <!-- LIMPEZA -->
+    <div class="pantry-reset-row">
+        <span>
+            Seus dados da despensa ficam salvos neste navegador.
+        </span>
+
+        <button
+            type="button"
+            id="pantryReset"
+            class="pantry-reset-button"
+        >
+            Limpar minha despensa
+        </button>
+    </div>
+
+</section>
+
+<!-- FIM DA DESPENSA DIGITAL -->
+
+  <script src="dispensa.html"></script>
+  </body>
+</html>
